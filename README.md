@@ -1,3 +1,3 @@
 # react-financial-education
 Financial education app built with react native
-To help millennials and underserved communities
+with a goal to help millennials and underserved communities
