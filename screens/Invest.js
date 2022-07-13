@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import CustomText from '../components/CustomText';
 
 const Invest = () => (
 	<View style={styles.invest}>
-		<Text>Invest</Text>
+		<CustomText>Invest</CustomText>
 		<StatusBar style="auto" />
 	</View>
 );

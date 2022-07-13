@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Invest from './screens/Invest';
 
+import CustomText from './components/CustomText';
+
 const Learn = () => (
 	<View style={styles.learn}>
 		<CustomText>Learn</CustomText>
@@ -18,9 +20,6 @@ const Plan = () => (
 	</View>
 );
 
-const CustomText = ({ children }) => (
-	<Text style={{ fontSize: 50 }}>{children}</Text>
-);
 
 const Tab = createBottomTabNavigator();
 
