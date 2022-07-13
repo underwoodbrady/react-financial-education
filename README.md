@@ -12,7 +12,7 @@ Financial education app built with react native with a goal to help millennials 
     
 ## Environment
 
--components: reusable stateless components
--constants: constant values to be used globally in app (colors, themes, ect.)
--navigation: components managing app navigation
--screens: composition of components with state
+- components: reusable stateless components
+- constants: constant values to be used globally in app (colors, themes, ect.)
+- navigation: components managing app navigation
+- screens: composition of components with state
