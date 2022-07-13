@@ -15,4 +15,4 @@ Financial education app built with react native with a goal to help millennials 
 - components: reusable stateless components
 - constants: constant values to be used globally in app (colors, themes, ect.)
 - navigation: components managing app navigation
-- screens: composition of components with state
+- screens: stateful composition of components
