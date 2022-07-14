@@ -22,10 +22,13 @@ const Invest = () => {
             />
             <Image
                 source={{
-                    uri: "https://reactnative.dev/docs/assets/p_cat2.png",
+                    uri: "https://images.app.goo.gl/Apzf25qJz1kHD1bG9",
                 }}
-                style={{ width: 200, height: 200 }}
+                style={{ width: 100, height: 100 }}
             />
+			<Image source={require('../assets/logo.png')}
+					style={{ width: 100, height: 10 }}
+			/>
       		<CustomButton title="Hey there!" size="sm" backgroundColor="#007bff" />
         </View>
     );
