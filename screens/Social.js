@@ -4,14 +4,14 @@ import CustomText from "../components/CustomText";
 
 import { useNavigation } from "@react-navigation/native";
 
-const Invest = () => {
+const Social = () => {
     const nav = useNavigation();
     return (
         <View style={styles.container}>
-            <CustomText>Invest</CustomText>
+            <CustomText>Social</CustomText>
             <Button
-                title="Go to profile"
-                onPress={() => nav.navigate("Profile")}
+                title="Go to leaderboard"
+                onPress={() => nav.navigate("Leaderboard")}
             />
             <StatusBar style="auto" />
         </View>
@@ -19,12 +19,13 @@ const Invest = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "tan",
-        alignItems: "center",
-        justifyContent: "center",
-    },
+	container: {
+		flex: 1,
+		backgroundColor: 'crimson',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
 });
 
-export default Invest;
+
+export default Social;
