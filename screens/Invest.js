@@ -9,6 +9,11 @@ const Invest = () => {
     const nav = useNavigation();
     return (
         <View style={styles.invest}>
+			{Array(10)
+        		.fill()
+        		.map((_, i) => {
+          		return <Text style={{ lineHeight: 30 }}>{i}</Text>;
+        }	)}
             <CustomText>Invest</CustomText>
             <Text>Hello there!</Text>
             <StatusBar style="auto" />
@@ -29,14 +34,15 @@ const Invest = () => {
 			<Image source={require('../assets/logo.png')}
 					style={{ width: 100, height: 10 }}
 			/>
-      		<CustomButton title="Hey there!" size="sm" backgroundColor="#007bff" />
+      		<CustomButton title="hi" size="sm" backgroundColor="#007bff" 
+				link = "Daily Spin"/>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     invest: {
-        flex: 1,
+		flex: 6,
         backgroundColor: "yellow",
         alignItems: "center",
         justifyContent: "center",

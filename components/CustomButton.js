@@ -1,10 +1,24 @@
 import reactDom from 'react-dom';
 import { Text, Pressable, TouchableOpacity, StyleSheet, Button, View} from 'react-native'; 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 
-  const CustomButton = ({ onPress, title }) => (
+  const CustomButton = ({ onPress, title, link }) => {
+
+	const nav = useNavigation();
+	return(
 	<View>
+
+		<Icon.Button
+			onPress= {() => nav.navigate(link)} style={styles.appButtonContainer}
+			name={"camera"}
+			backgroundColor={"blue"}
+		>
+			<Text style={styles.appButtonText}>{title}</Text>
+    	</Icon.Button>
+		
+		{/*
 		<Icon.Button
 			name={"camera"}
 			backgroundColor={"blue"}
@@ -13,11 +27,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 		>
 			<Text style={styles.appButtonText}>{title}</Text>
     	</Icon.Button>
-		<TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+		<TouchableOpacity onPress= {() => nav.navigate(link)} style={styles.appButtonContainer}>
 			<Text style={styles.appButtonText}>{title}</Text>
-		</TouchableOpacity>
+	</TouchableOpacity> */}
 	</View>
-  );
+	)
+  };
 
   const styles = StyleSheet.create({
 	// ...
