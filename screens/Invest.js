@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, Alert, Image } from "react-native";
 import CustomText from "../components/CustomText";
+import CustomButton from "../components/CustomButton";
 
 import { useNavigation } from "@react-navigation/native";
 
