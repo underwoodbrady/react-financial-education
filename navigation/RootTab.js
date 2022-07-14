@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import img from "../assets/icon.png"
 
 import PlanningTab from './PlanningTab';
 import InvestmentStack from './InvestmentStack';
@@ -10,7 +11,9 @@ const RootTab = () => (
 	<Tab.Navigator>
 		<Tab.Screen name="Learn" component={LearningStack} />
 		<Tab.Screen name="Plan" component={PlanningTab} />
-		<Tab.Screen name="Invest" component={InvestmentStack} />
+		<Tab.Screen name="Invest" component={InvestmentStack} options={{
+			title:"Invest Test",
+		}} />
 	</Tab.Navigator>
 );
 
