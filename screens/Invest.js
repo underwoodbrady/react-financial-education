@@ -26,6 +26,7 @@ const Invest = () => {
                 }}
                 style={{ width: 200, height: 200 }}
             />
+      		<CustomButton title="Hey there!" size="sm" backgroundColor="#007bff" />
         </View>
     );
 };
