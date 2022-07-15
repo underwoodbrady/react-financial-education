@@ -6,14 +6,14 @@ import PlanningTab from './PlanningTab';
 import InvestmentStack from './InvestmentStack';
 import LearningStack from './LearningStack';
 
-import LearningHeader from '../components/navigation/LearningHeader';
+import LearningHeader from '../components/header/LearningHeader';
 
 const Tab = createBottomTabNavigator();
 
 const RootTab = () => (
 	<Tab.Navigator screenOptions={{
-		tabBarStyle: {backgroundColor:"#01101B"},
-		headerStyle: {backgroundColor:"#01101B"},
+		tabBarStyle: {backgroundColor:"#0A1E2D", border:'none', outline:'none', borderTopWidth:0},
+		headerStyle: {backgroundColor:"#0A1E2D"},
 		headerRight: () => <LearningHeader/>,
 		headerTintColor: 'white',
 		tabBarShowLabel:false,
