@@ -9,8 +9,12 @@ import Leaderboard from "../screens/Leaderboard";
 const Stack = createStackNavigator();
 
 const LearningStack = () => (
-    <Stack.Navigator>
-        <Stack.Screen name="Learning Home" component={Learn} />
+    <Stack.Navigator screenOptions={{
+        headerShown:true,
+    }}>
+        <Stack.Screen name="Learning Home" component={Learn} options={{
+            headerShown: false,
+        }}/>
         <Stack.Screen name="Course" component={Course} />
         <Stack.Screen name="Social" component={Social} />
         <Stack.Screen name="Daily Spin" component={DailySpin} />

@@ -6,15 +6,20 @@ import PlanningTab from './PlanningTab';
 import InvestmentStack from './InvestmentStack';
 import LearningStack from './LearningStack';
 
+import LearningHeader from '../components/navigation/LearningHeader';
+
 const Tab = createBottomTabNavigator();
 
 const RootTab = () => (
 	<Tab.Navigator screenOptions={{
 		tabBarStyle: {backgroundColor:"#01101B"},
+		headerStyle: {backgroundColor:"#01101B"},
+		headerRight: () => <LearningHeader/>,
+		headerTintColor: 'white',
 		tabBarShowLabel:false,
 		tabBarInactiveTintColor:'#B6C5D4',
 		tabBarActiveTintColor: '#69ABE6',
-		headerShown: false,
+		headerShown: true,
 	}}>
 		<Tab.Screen name="Learn" component={LearningStack} options={{
 			tabBarIcon: ({color}) => <Entypo name='book' size={26} color={color}/>,
