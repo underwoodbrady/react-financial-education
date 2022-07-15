@@ -10,9 +10,9 @@ const Invest = () => {
     return (
         <View style={styles.invest}>
 			{Array(10)
-        		.fill(0,9)
+        		.fill()
         		.map((_, i) => {
-          		return <Text style={{ lineHeight: 30 }} key={_}>{i}</Text>;
+          		return <Text style={{ lineHeight: 30 }} key={Math.random()}>{i}</Text>;
         }	)}
             <CustomText>Invest</CustomText>
             <Text>Hello there!</Text>
