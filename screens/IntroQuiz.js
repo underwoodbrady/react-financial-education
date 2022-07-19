@@ -1,50 +1,13 @@
 import React, { useState } from 'react';
+import questions from '../Data/IntroQuizData';
 
 function App() {
+ 
 
-  const questions = [
-    {
-      questionText: 'Who is Prime Minister of India?',
-      answerOptions: [
-        { answerText: 'Vijay Rupani', isCorrect: false },
-        { answerText: 'Manmohan singh', isCorrect: false },
-        { answerText: 'Narendra Modi', isCorrect: true },
-        { answerText: 'Deep Patel', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'Who is CEO of Tata?',
-      answerOptions: [
-        { answerText: 'Jeff Bezos', isCorrect: false },
-        { answerText: 'Ratan Tata', isCorrect: true },
-        { answerText: 'Mukesh Ambani', isCorrect: false },
-        { answerText: 'Gautam Adani', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'who is richest person in the world?',
-      answerOptions: [
-        { answerText: 'Jeff Bezos', isCorrect: false },
-        { answerText: 'Elon Musk', isCorrect: true },
-        { answerText: 'Mukesh Ambani', isCorrect: false },
-        { answerText: 'Warren Buffett', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'how many countries in the world?',
-      answerOptions: [
-        { answerText: '120', isCorrect: false },
-        { answerText: '183', isCorrect: false },
-        { answerText: '170', isCorrect: false },
-        { answerText: '195', isCorrect: true },
-      ],
-    },
-  ]
-
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [showScore, setShowScore] = useState(false)
-  const [score, setScore] = useState(0)
-  const handleAnswerButtonClick = (isCorrect) => {
+const [currentQuestion, setCurrentQuestion] = useState(0)
+const [showScore, setShowScore] = useState(false)
+const [score, setScore] = useState(0)
+const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
       setScore(score + 1);
     }
