@@ -33,6 +33,10 @@ const Learn = () => {
                 title="Go to your daily spin"
                 onPress={() => nav.navigate("Daily Spin")}
             />
+            <Button
+                title="Quiz will be replaced above"
+                onPress={() => nav.navigate("Intro Quiz")}
+            />
             <StatusBar style="auto" />
         </ScrollView>
     );
