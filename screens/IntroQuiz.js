@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import questions from '../Data/IntroQuizData';
+import { Button, Text, View } from 'react-native';
+import CustomText from '../components/CustomText';
 
-function App() {
+
+const Quiz = () => {
  
 
 const [currentQuestion, setCurrentQuestion] = useState(0)
 const [showScore, setShowScore] = useState(false)
 const [score, setScore] = useState(0)
+//below is where we can add animations for correct/incorrect answers etc
 const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
       setScore(score + 1);
@@ -23,38 +27,49 @@ const handleAnswerButtonClick = (isCorrect) => {
   }
 
   return (
-    <>
-      <h1 className='header'>Quiz</h1>
-      <div className="app">
-        {showScore ? (
-          <div className='score-section'>
-            You scored {score} out of {questions.length}
-          </div>
+
+    <View>
+    {showScore ?
+        <Text>You scored {score} out of {questions.length}</Text>
+        :
+        (
+        <>
+            <View>
+                <Text>Question {currentQuestion + 1} out of {questions.length} </Text>
+                <CustomText>{questions[currentQuestion].questionText}</CustomText>
+            </View>
+            <View className='answer-section'>
+                <Text>
+                    {
+                    <Button title={questions[currentQuestion].answerOptions[0].answerText} onPress={() => 
+                        handleAnswerButtonClick(questions[currentQuestion].answerOptions[0].isCorrect)}></Button>
+                    }
+                    {
+                    <Button title={questions[currentQuestion].answerOptions[1].answerText} onPress={() => 
+                            handleAnswerButtonClick(questions[currentQuestion].answerOptions[1].isCorrect)}></Button>
+                    }
+                    {
+                    <Button title={questions[currentQuestion].answerOptions[2].answerText} onPress={() => 
+                        handleAnswerButtonClick(questions[currentQuestion].answerOptions[2].isCorrect)}></Button>
+                    }
+                    {
+                    <Button title={questions[currentQuestion].answerOptions[3].answerText} onPress={() => 
+                            handleAnswerButtonClick(questions[currentQuestion].answerOptions[3].isCorrect)}></Button>
+                    }
+                  
+                </Text>
+              </View>
+        </>
+        
         )
-          :
-          (
-            <>
-              <div className='question-section'>
-                <div className='question-count'>
-                  <span>Question {currentQuestion + 1}</span>{questions.length}
-                </div>
-                <div className='question-text'>
-                  {questions[currentQuestion].questionText}
-                </div>
-              </div>
+    }
+    </View>
+  ); 
+            }
 
-              <div className='answer-section'>
-                {
-                  questions[currentQuestion].answerOptions.map((answerOptions) => (
-                    <button onClick={() => handleAnswerButtonClick(answerOptions.isCorrect)}>{answerOptions.answerText}</button>
-                  ))
-                }
-              </div>
-            </>
-          )}
-      </div>
-    </>
-  );
-}
+            //questions[currentQuestion].answerOptions[0]
+                  //.map((answerOptions) => (
+                   // <Button title={answerOptions.answerText} onPress={() => handleAnswerButtonClick(answerOptions.isCorrect)}></Button>
+                  //))
 
-export default App;
+export default Quiz;
