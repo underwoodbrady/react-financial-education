@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import questions from '../Data/IntroQuizData';
 import { Button, Text, View } from 'react-native';
 import CustomText from '../components/CustomText';
+import Svg, { Rect, Circle } from 'react-native-svg';
+
 
 
 const Quiz = () => {
@@ -34,6 +36,7 @@ const handleAnswerButtonClick = (isCorrect) => {
         :
         (
         <>
+        
             <View>
                 <Text>Question {currentQuestion + 1} out of {questions.length} </Text>
                 <CustomText>{questions[currentQuestion].questionText}</CustomText>
