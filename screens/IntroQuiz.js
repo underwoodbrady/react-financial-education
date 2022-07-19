@@ -1,31 +1,97 @@
-import React from "react";
-import { View, StyleSheet, StatusBar, Text, SafeAreaView } from "react-native";
+import React, { useState } from 'react';
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: 'darkcyan',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
+function App() {
 
-class Quiz extends React.Component {
-    state = {
-        correctCount: 0,
-        totalCount: this.props.navigation.getParam("questions", []).length,
-        activeQuestionIndex: 0,
-        answered: false,
-        answerCorrect: false
-      };
+  const questions = [
+    {
+      questionText: 'Who is Prime Minister of India?',
+      answerOptions: [
+        { answerText: 'Vijay Rupani', isCorrect: false },
+        { answerText: 'Manmohan singh', isCorrect: false },
+        { answerText: 'Narendra Modi', isCorrect: true },
+        { answerText: 'Deep Patel', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Who is CEO of Tata?',
+      answerOptions: [
+        { answerText: 'Jeff Bezos', isCorrect: false },
+        { answerText: 'Ratan Tata', isCorrect: true },
+        { answerText: 'Mukesh Ambani', isCorrect: false },
+        { answerText: 'Gautam Adani', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'who is richest person in the world?',
+      answerOptions: [
+        { answerText: 'Jeff Bezos', isCorrect: false },
+        { answerText: 'Elon Musk', isCorrect: true },
+        { answerText: 'Mukesh Ambani', isCorrect: false },
+        { answerText: 'Warren Buffett', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'how many countries in the world?',
+      answerOptions: [
+        { answerText: '120', isCorrect: false },
+        { answerText: '183', isCorrect: false },
+        { answerText: '170', isCorrect: false },
+        { answerText: '195', isCorrect: true },
+      ],
+    },
+  ]
 
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [showScore, setShowScore] = useState(false)
+  const [score, setScore] = useState(0)
+  const handleAnswerButtonClick = (isCorrect) => {
+    if (isCorrect === true) {
+      setScore(score + 1);
+    }
+
+    const nextQuetions = currentQuestion + 1;
+    
+    if (nextQuetions < questions.length) {
+      setCurrentQuestion(nextQuetions);
+    }
+    else {
+      setShowScore(true)
+    }
+  }
+
+  return (
+    <>
+      <h1 className='header'>Quiz</h1>
+      <div className="app">
+        {showScore ? (
+          <div className='score-section'>
+            You scored {score} out of {questions.length}
+          </div>
+        )
+          :
+          (
+            <>
+              <div className='question-section'>
+                <div className='question-count'>
+                  <span>Question {currentQuestion + 1}</span>{questions.length}
+                </div>
+                <div className='question-text'>
+                  {questions[currentQuestion].questionText}
+                </div>
+              </div>
+
+              <div className='answer-section'>
+                {
+                  questions[currentQuestion].answerOptions.map((answerOptions) => (
+                    <button onClick={() => handleAnswerButtonClick(answerOptions.isCorrect)}>{answerOptions.answerText}</button>
+                  ))
+                }
+              </div>
+            </>
+          )}
+      </div>
+    </>
+  );
 }
 
-const IntroQuiz = () => (
-	<View style={styles.container}>
-		<Text>DailySpin</Text>
-		<StatusBar style="auto" />
-	</View>
-);
-
-export default IntroQuiz;
+export default App;
