@@ -13,7 +13,7 @@ const ToolsStack = () => (
     }}>
         <Stack.Screen name="Overview" component={Tools} options={{headerShown:false}}/>
         <Stack.Screen name="Invest" component={Invest}/>
-        <Stack.Screen name="Planning" component={PlanningTab}/>
+        <Stack.Screen name="Planning" component={PlanningTab} options={{headerShown:false}}/>
     </Stack.Navigator>
 );
 

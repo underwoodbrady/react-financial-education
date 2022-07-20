@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
@@ -6,23 +7,20 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import Budgets from '../screens/Budgets';
 import Goals from '../screens/Goals';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 const PlanningTab = () => (
 	<Tab.Navigator screenOptions={{
-		tabBarStyle: {backgroundColor:"transparent", borderTopWidth:0, width:"85%", alignSelf:"center", marginBottom:22},
-		headerStyle: {backgroundColor:"#0A1E2D"},
-		headerTintColor: 'white',
+		tabBarStyle: {backgroundColor:"#0A1E2D"},
+		tabBarLabelStyle: { fontSize: 15 },
+		tabBarItemStyle:{height:60},
 		headerShown:false,
 		tabBarInactiveTintColor:'#B6C5D4',
 		tabBarActiveTintColor: '#69ABE6',
+		tabBarIndicatorStyle: {borderColor:"red", color:"red"},
 	}}>
-		<Tab.Screen name="Budgets" component={Budgets} options={{
-			tabBarIcon: ({color}) => <FontAwesome5 name="money-check" size={18} color={color} />,
-		}}/>
-		<Tab.Screen name="Goals" component={Goals} options={{
-			tabBarIcon: ({color}) => <FontAwesome5 name="clipboard-check" size={18} color={color} />,
-		}}/>
+		<Tab.Screen name="Budgets" component={Budgets}/>
+		<Tab.Screen name="Goals" component={Goals}/>
 	</Tab.Navigator>
 );
 
