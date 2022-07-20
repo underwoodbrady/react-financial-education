@@ -1,9 +1,10 @@
 import { Text, View, Image, StyleSheet } from 'react-native';
 
 import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'; 
 
-const Budget = ({ i = 0, label, icon, color = "white", complete = false }) => (
-	<View style={styles.container}>
+const Budget = ({ i = 0, label, icon, color = "white", complete = false, currentValue = 1, goalValue = 1}) => (
+	<View style={[styles.container, currentValue>=goalValue && {backgroundColor: "#122533"}]}>
 		<View style={styles.textContainer}>
 			<FontAwesome5
 				style={styles.icon}
@@ -12,9 +13,10 @@ const Budget = ({ i = 0, label, icon, color = "white", complete = false }) => (
 				color={color}
 			/>
 			<Text style={styles.labelText}>{label}</Text>
+            {currentValue>=goalValue ? <FontAwesome name="check-circle" size={16} color="white" />  : <Text style={styles.percentText}>{currentValue/goalValue*100}%</Text> }
 		</View>
 		<View style={styles.budgetContainer}>
-            <View style={[styles.budgetFull, {backgroundColor:color}]}></View>
+            <View style={[styles.budgetFull, {backgroundColor:color, width: currentValue/goalValue*100 + "%"}]}></View>
         </View>
 	</View>
 );
@@ -41,6 +43,9 @@ const styles = StyleSheet.create({
         flex:1,
         fontWeight: "500",
 	},
+    percentText: {
+        color: 'white',
+    },
 	budgetContainer: {
 		width: "100%",
         marginTop:12,
@@ -51,7 +56,6 @@ const styles = StyleSheet.create({
 	},
     budgetFull:{
         height:"100%",
-        width:"40%",
         borderRadius: 240,
     },
 });
