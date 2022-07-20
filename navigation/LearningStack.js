@@ -12,6 +12,7 @@ const Stack = createStackNavigator();
 const LearningStack = () => (
     <Stack.Navigator screenOptions={{
         headerShown:true,
+        headerStyle: {backgroundColor:"#0A1E2D"},
     }}>
         <Stack.Screen name="Learning Home" component={Learn} options={{
             headerShown: false,

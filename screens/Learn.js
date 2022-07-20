@@ -10,7 +10,6 @@ const Learn = () => {
     const nav = useNavigation();
     return (
         <ScrollView style={styles.container} contentContainerStyle={{
-            backgroundColor: '#01101B',
             padding: 32,
             alignItems:"center",
         }}>

@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import CustomText from '../components/CustomText';
 
-const DailySpin = () => (
+const Play = () => (
 	<View style={styles.container}>
-		<CustomText>DailySpin</CustomText>
+		<CustomText>Play</CustomText>
 		<StatusBar style="auto" />
 	</View>
 );
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default DailySpin;
+export default Play;

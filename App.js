@@ -1,9 +1,13 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import RootTab from './navigation/RootTab';
+
+const navTheme = DefaultTheme;
+navTheme.colors.background="#01101B";
 
 export default function App() {
 	return (
-		<NavigationContainer>
+		<NavigationContainer
+		theme={navTheme}>
 			<RootTab />
 		</NavigationContainer>
 	);

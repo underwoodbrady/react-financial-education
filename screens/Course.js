@@ -12,7 +12,6 @@ const Course = () => (
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'cornsilk',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},

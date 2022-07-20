@@ -3,6 +3,7 @@ import img from "../assets/icon.png"
 import { Entypo, Ionicons } from '@expo/vector-icons';
 
 import PlanningTab from './PlanningTab';
+import PlayStack from './PlayStack';
 import InvestmentStack from './InvestmentStack';
 import LearningStack from './LearningStack';
 
@@ -19,12 +20,11 @@ const RootTab = () => (
 		tabBarShowLabel:false,
 		tabBarInactiveTintColor:'#B6C5D4',
 		tabBarActiveTintColor: '#69ABE6',
-		headerShown: true,
 	}}>
 		<Tab.Screen name="Learn" component={LearningStack} options={{
 			tabBarIcon: ({color}) => <Entypo name='book' size={24} color={color}/>,
 		}}/>
-		<Tab.Screen name="Play" component={PlanningTab} options={{
+		<Tab.Screen name="Play" component={PlayStack} options={{
 			tabBarIcon: ({color}) => <Entypo name='game-controller' size={24} color={color}/>,
 		}}/>
 		<Tab.Screen name="Tools" component={InvestmentStack} options={{
