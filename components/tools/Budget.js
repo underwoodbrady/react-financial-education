@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 		borderColor: '#324A60',
 		borderRadius: 16,
 		padding: 16,
-		width: 330,
+		width: 360,
 		justifyContent: 'space-between',
 	},
 	textContainer: {
