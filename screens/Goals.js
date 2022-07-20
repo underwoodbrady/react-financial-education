@@ -2,9 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import CustomText from '../components/CustomText';
 
-const Plan = () => (
+const Goals = () => (
 	<View style={styles.container}>
-		<CustomText>Plan</CustomText>
+		<CustomText>Goals</CustomText>
 		<StatusBar style="auto" />
 	</View>
 );
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Plan;
+export default Goals;

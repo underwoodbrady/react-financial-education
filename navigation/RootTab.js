@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 
 const RootTab = () => (
 	<Tab.Navigator screenOptions={{
-		tabBarStyle: {backgroundColor:"#0A1E2D", border:'none', outline:'none', borderTopWidth:0, height:55},
+		tabBarStyle: {backgroundColor:"#0A1E2D", borderTopWidth:0, height:55},
 		headerStyle: {backgroundColor:"#0A1E2D"},
 		headerRight: () => <LearningHeader/>,
 		headerTintColor: 'white',
