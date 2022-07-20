@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 const InvestmentStack = () => (
     <Stack.Navigator>
         <Stack.Screen name="Overview" component={Invest} />
-        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Inner Profile" component={Profile} />
     </Stack.Navigator>
 );
 

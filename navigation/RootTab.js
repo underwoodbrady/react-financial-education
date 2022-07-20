@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import img from "../assets/icon.png"
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, Ionicons } from '@expo/vector-icons';
 
 import PlanningTab from './PlanningTab';
 import InvestmentStack from './InvestmentStack';
@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 const RootTab = () => (
 	<Tab.Navigator screenOptions={{
-		tabBarStyle: {backgroundColor:"#0A1E2D", border:'none', outline:'none', borderTopWidth:0},
+		tabBarStyle: {backgroundColor:"#0A1E2D", border:'none', outline:'none', borderTopWidth:0, height:55},
 		headerStyle: {backgroundColor:"#0A1E2D"},
 		headerRight: () => <LearningHeader/>,
 		headerTintColor: 'white',
@@ -22,13 +22,16 @@ const RootTab = () => (
 		headerShown: true,
 	}}>
 		<Tab.Screen name="Learn" component={LearningStack} options={{
-			tabBarIcon: ({color}) => <Entypo name='book' size={26} color={color}/>,
+			tabBarIcon: ({color}) => <Entypo name='book' size={24} color={color}/>,
 		}}/>
-		<Tab.Screen name="Plan" component={PlanningTab} options={{
-			tabBarIcon: ({color}) => <Entypo name='list' size={26} color={color}/>,
+		<Tab.Screen name="Play" component={PlanningTab} options={{
+			tabBarIcon: ({color}) => <Entypo name='game-controller' size={24} color={color}/>,
 		}}/>
-		<Tab.Screen name="Invest" component={InvestmentStack} options={{
-			tabBarIcon: ({color}) => <Entypo name='bar-graph' size={26} color={color}/>,
+		<Tab.Screen name="Tools" component={InvestmentStack} options={{
+			tabBarIcon: ({color}) => <Entypo name='tools' size={24} color={color}/>,
+		}} />
+		<Tab.Screen name="Profile" component={InvestmentStack} options={{
+			tabBarIcon: ({color}) => <Ionicons name="person" size={24} color={color} />,
 		}} />
 	</Tab.Navigator>
 );
