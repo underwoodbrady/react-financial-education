@@ -47,6 +47,7 @@ const Quiz = () => {
 			<AntDesign  style={{marginLeft:4, marginRight:4}} name="hearto" size={24} color="#F75959" />
 			<AntDesign  style={{marginLeft:4, marginRight:4}} name="hearto" size={24} color="#F75959" />
 		</View>,
+    //{handleAnswerButtonClick('false')}
 	];
 
 	return (
@@ -94,6 +95,7 @@ const Quiz = () => {
 const styles = StyleSheet.create({
 	container: {
 		padding: 32,
+    align: 'center',
 	},
 	hearts: {
 		alignSelf: 'center',
