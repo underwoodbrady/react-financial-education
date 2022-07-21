@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import img from "../assets/icon.png"
-import { Entypo, Ionicons } from '@expo/vector-icons';
+import { Entypo, Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
 import LearningStack from './LearningStack';
 import PlayStack from './PlayStack';
@@ -28,7 +28,7 @@ const RootTab = () => (
 			tabBarIcon: ({color}) => <Entypo name='game-controller' size={24} color={color}/>,
 		}}/>
 		<Tab.Screen name="Tools" component={ToolsStack} options={{
-			tabBarIcon: ({color}) => <Entypo name='tools' size={24} color={color}/>,
+			tabBarIcon: ({color}) => <FontAwesome5 name='tools' size={20} color={color}/>,
 		}} />
 		<Tab.Screen name="Profile" component={ProfileStack} options={{
 			tabBarIcon: ({color}) => <Ionicons name="person" size={24} color={color} />,
