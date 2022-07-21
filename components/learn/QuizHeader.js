@@ -7,9 +7,6 @@ const QuizHeader = ({score, numQuestions}) => (
 	<View style={styles.container}>
 			<View style={styles.progressBar}>
 				<View style={[styles.progressBarFull, {width: score / numQuestions *100 + "%"}]}>
-					<TouchableOpacity onPress={()=>{alert("you clicked me")}}>
-						<Feather name="x-circle" size={26} color="black" />
-        			</TouchableOpacity>
 				</View>
 			</View>
 	</View>
@@ -18,13 +15,13 @@ const QuizHeader = ({score, numQuestions}) => (
 
 const styles = StyleSheet.create({
 	container: {
-		padding: 24,
-		paddingTop: 48,
+		marginTop:8,
+		marginBottom:16,
 		width: '100%',
 	},
 	
 	progressBar: {
-		backgroundColor: 'green',
+		backgroundColor: '#324A60',
 		borderRadius: 100,
 		width: '100%',
 		marginTop:12,
@@ -35,7 +32,7 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		height: '100%',
 		borderRadius: 240,
-		backgroundColor: 'orange',
+		backgroundColor: '#69ABE6',
 	},
 });
 
