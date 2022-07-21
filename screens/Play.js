@@ -30,7 +30,6 @@ const gameData = [
 
 const Play = () => (
     <View style={styles.container}>
-        <Text style={styles.headerText}>Games</Text>
         {gameData.map((game, i) => (
             <View style={styles.gameTabContainer}>
                 <GameTab
@@ -57,11 +56,6 @@ const styles = StyleSheet.create({
 		marginTop: 10,
 		marginBottom: 10,
 	},
-    headerText: {
-        fontSize: 26,
-        color: "white",
-		marginBottom: 16,
-    },
 });
 
 export default Play;
