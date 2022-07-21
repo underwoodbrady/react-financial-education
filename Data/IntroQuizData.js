@@ -10,7 +10,7 @@ const questions = [
       ],
     },
     {
-      questionText: 'Who is CEO of EnvestNet?',
+      questionText: 'Who is CEO of Envestnet?',
       questionAnsweredRight: 0,
       answerOptions: [
         { answerText: 'Bill Crager', isCorrect: true },
@@ -29,7 +29,7 @@ const questions = [
       ],
     },
     {
-      questionText: 'How many people work at envestnet?',
+      questionText: 'How many people work at Envestnet?',
       questionAnsweredRight: 0,
       answerOptions: [
         { answerText: '5,174', isCorrect: false },
