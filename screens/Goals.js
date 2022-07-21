@@ -12,9 +12,7 @@ import GoalsContainer from '../components/tools/GoalsContainer';
 
 const Goals = () => (
 	<View style={styles.container}>
-		<View style={styles.headerText}><CustomText>Goals</CustomText></View>
         <GoalsContainer goalsData={mockGoalsData}/>
-		<StatusBar style="auto" />
 	</View>
 );
 
@@ -22,7 +20,8 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'flex-start',
+		marginTop:36,
 	},
     headerText:{
 		marginBottom:20,

@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import CustomText from '../components/CustomText';
 
 //Add Icons
 const mockBudgetData = [
@@ -66,10 +65,6 @@ import BudgetContainer from '../components/tools/BudgetContainer';
 
 const Budgets = () => (
 	<View style={styles.container}>
-		<View style={styles.headerText}>
-			<CustomText>Budgets</CustomText>
-		</View>
-		<StatusBar style="auto" />
 		<BudgetContainer budgetsData={mockBudgetData} />
 	</View>
 );
@@ -79,6 +74,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
+		marginTop:36,
 	},
 	headerText: {
 		marginBottom: 28,
