@@ -1,8 +1,8 @@
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, Pressable } from 'react-native';
 
-const LearnPathNode = ({text, image = require('../../assets/banks.png'), color, disabled=false}) => (
+const LearnPathNode = ({text, image = require('../../assets/banks.png'), color, disabled=false, onPress}) => (
 	<View style={styles.container}>
-		<View style={styles.outline}>
+		<Pressable style={styles.outline} onPress={onPress}>
 			<View style={[styles.circle, disabled && {backgroundColor:"#324A60"}]}>
 				<Image
 					style={[styles.circleImage, disabled && {tintColor: '#324A60'}]}
@@ -14,7 +14,7 @@ const LearnPathNode = ({text, image = require('../../assets/banks.png'), color, 
 				/>}
 			</View>
 			<View style={styles.outlineFilled}></View>
-		</View>
+		</Pressable>
 		<Text style={[styles.labelText, disabled && {color: "#324A60"}]}>{text}</Text>
 	</View>
 );

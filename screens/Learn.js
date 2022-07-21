@@ -29,7 +29,7 @@ const Learn = () => {
                 />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
-                <LearnPathNode text="Saving" image={banks}/>
+                <LearnPathNode text="Saving" image={banks} onPress={() => nav.navigate("Intro Quiz")}/>
             </View>
             <View
                 style={{

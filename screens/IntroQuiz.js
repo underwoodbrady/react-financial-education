@@ -56,12 +56,12 @@ const handleAnswerButtonClick = (isCorrect) => {
     
     <View style={styles.container}>
     {showScore ?
-        <Text>You scored {score} out of {questions.length}</Text>
+        <Text style={styles.scoreText}>You scored {score} out of {questions.length}</Text>
         :
         (
         <>
             <View>
-            <View><QuizHeader score={score} numQuestions = {numQuestions}/></View>
+            <View>{<QuizHeader score={score} numQuestions = {numQuestions}/>}</View>
               {heartsIncorrect[numIncorrect]}
               <CustomText>{questions[currentQuestion].questionText}</CustomText>
             </View>
@@ -84,9 +84,11 @@ const handleAnswerButtonClick = (isCorrect) => {
 
 const styles = StyleSheet.create({
 	container: {
-    backgroundColor: 'blue',
     padding: 32,
 	},
+  scoreText:{
+    color:"white",
+  },
 });
 
 export default Quiz;
