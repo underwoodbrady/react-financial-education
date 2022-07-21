@@ -14,7 +14,7 @@ const questions = [
       questionAnsweredRight: 0,
       answerOptions: [
         { answerText: 'Tim Cook', isCorrect: true },
-        { answerText: 'Ratan Tata', isCorrect: true },
+        { answerText: 'Ratan Tata', isCorrect: false },
         { answerText: 'Mukesh Ambani', isCorrect: false },
       ],
     },

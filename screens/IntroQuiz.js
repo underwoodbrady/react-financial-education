@@ -12,7 +12,7 @@ const Quiz = () => {
 const [currentQuestion, setCurrentQuestion] = useState(0)
 const [showScore, setShowScore] = useState(false)
 const [score, setScore] = useState(0)
-const numQuestions = 6
+const numQuestions = questions.length//TODO: map.length
 //below is where we can add animations for correct/incorrect answers etc
 const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
@@ -38,7 +38,7 @@ const handleAnswerButtonClick = (isCorrect) => {
         :
         (
         <>
-          <View style={{marginTop:0, marginBottom:16}}><QuizHeader score={score}/></View>
+          <View style={{marginTop:0, marginBottom:16}}><QuizHeader score={score} numQuestions = {numQuestions}/></View>
             <View>
                 <Text>Question {currentQuestion + 1} out of {questions.length} </Text>
                 <CustomText>{questions[currentQuestion].questionText}</CustomText>
