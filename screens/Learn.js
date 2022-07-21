@@ -83,7 +83,7 @@ const Learn = () => {
             <Button
                 title="Go to social page"
                 onPress={() => nav.navigate("Social")}
-    />*/}
+    />
             <Button
                 title="Go to your daily spin"
                 onPress={() => nav.navigate("Daily Spin")}
@@ -91,7 +91,7 @@ const Learn = () => {
             <Button
                 title="Quiz will be replaced above"
                 onPress={() => nav.navigate("Intro Quiz")}
-            />
+            />*/}
             <StatusBar style="auto" />
         </ScrollView>
     );
