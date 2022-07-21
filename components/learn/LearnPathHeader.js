@@ -1,6 +1,6 @@
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-const LearnPathHeader = () => (
+const LearnPathHeader = ({image, text, currentComplete, goalComplete}) => (
 	<View style={styles.container}>
 		<View style={styles.headerImageContainer}>
 			<Image
@@ -9,7 +9,7 @@ const LearnPathHeader = () => (
 			/>
 		</View>
 		<View style={styles.header}>
-			<Text style={styles.headerText}>Unit 1</Text>
+			<Text style={styles.headerText}>{text}</Text>
 		</View>
 		<View style={styles.footer}>
 			<View style={styles.progressBar}>
@@ -20,7 +20,7 @@ const LearnPathHeader = () => (
 				/>
 			</View>
 			<View>
-				<Text style={styles.footerText}>4/10</Text>
+				<Text style={styles.footerText}>{currentComplete}/{goalComplete}</Text>
 			</View>
 		</View>
 	</View>
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
 	headerImage: {
 		position: 'absolute',
 		height: 115,
+		width:50,
 		top: -75,
 	},
 	header: {},

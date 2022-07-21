@@ -12,7 +12,6 @@ const DailySpin = () => (
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'darkcyan',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},

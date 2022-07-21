@@ -43,7 +43,6 @@ const Invest = () => {
 const styles = StyleSheet.create({
     invest: {
 		flex: 6,
-        backgroundColor: "yellow",
         alignItems: "center",
         justifyContent: "center",
     },

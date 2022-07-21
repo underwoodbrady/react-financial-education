@@ -1,17 +1,21 @@
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-const LearnPathNode = () => (
+const LearnPathNode = ({text, image = require('../../assets/banks.png'), color, disabled=false}) => (
 	<View style={styles.container}>
 		<View style={styles.outline}>
-			<View style={styles.circle}>
+			<View style={[styles.circle, disabled && {backgroundColor:"#324A60"}]}>
 				<Image
-					style={styles.circleImage}
-					source={require('../../assets/banks.png')}
+					style={[styles.circleImage, disabled && {tintColor: '#324A60'}]}
+					source={image}
 				/>
+				{disabled && 	<Image
+					style={[styles.circleImage, {position:'absolute', opacity:0.25, top:15}]}
+					source={image}
+				/>}
 			</View>
 			<View style={styles.outlineFilled}></View>
 		</View>
-		<Text style={styles.labelText}>Saving</Text>
+		<Text style={[styles.labelText, disabled && {color: "#324A60"}]}>{text}</Text>
 	</View>
 );
 
