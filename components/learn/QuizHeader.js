@@ -6,7 +6,7 @@ import { Feather } from '@expo/vector-icons';
 const QuizHeader = ({score, numQuestions}) => (
 	<View style={styles.container}>
 			<View style={styles.progressBar}>
-				<View style={[styles.progressBarFull, {width: score / numQuestions *100 + "%"}]}>
+				<View style={[styles.progressBarFull, {width: score / numQuestions * 100 + "%"}]}>
 				</View>
 			</View>
 	</View>

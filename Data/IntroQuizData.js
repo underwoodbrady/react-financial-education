@@ -1,7 +1,6 @@
 const questions = [
     {
       questionText: 'What is the ticker for Envestnet?',
-      questionAnsweredRight: 0,
       answerOptions: [
         { answerText: 'EN', isCorrect: false },
         { answerText: 'EVN', isCorrect: false },
@@ -11,7 +10,6 @@ const questions = [
     },
     {
       questionText: 'Who is CEO of Envestnet?',
-      questionAnsweredRight: 0,
       answerOptions: [
         { answerText: 'Bill Crager', isCorrect: true },
         { answerText: 'Tim Cook', isCorrect: false },
@@ -20,7 +18,6 @@ const questions = [
     },
     {
       questionText: 'Who is richest person in the world?',
-      questionAnsweredRight: 0,
       answerOptions: [
         { answerText: 'Jeff Bezos', isCorrect: false },
         { answerText: 'Elon Musk', isCorrect: true },
@@ -30,7 +27,6 @@ const questions = [
     },
     {
       questionText: 'How many people work at Envestnet?',
-      questionAnsweredRight: 0,
       answerOptions: [
         { answerText: '5,174', isCorrect: false },
         { answerText: '3,516', isCorrect: false },
@@ -40,7 +36,6 @@ const questions = [
     },
     {
       questionText: 'Is the sky blue?',
-      questionAnsweredRight: 0,
       answerOptions: [
         { answerText: 'False', isCorrect: false },
         { answerText: 'True', isCorrect: true },

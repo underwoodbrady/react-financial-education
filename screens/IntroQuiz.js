@@ -46,7 +46,7 @@ const Quiz = () => {
 			  setScore(score + 1);
       }
 		} else {
-      //right here we can get mad about 3 incorrect maybe
+      Vibration.vibrate();
       if (numIncorrect == 0) {
         setIncorrectOne(currentQuestion);
       } else if (numIncorrect == 1) {
@@ -57,18 +57,7 @@ const Quiz = () => {
       setIncorrect(numIncorrect + 1);
 		}
 
-		//const nextQuestions = currentQuestion + 1;
   }
-
-  //restart function,
-  //when icon is pushed, we must reset variables: score, currentQuestion
-    /*
-		if (nextQuestions < questions.length) {
-			setCurrentQuestion(nextQuestions);
-		} else {
-			  setShowScore(true);
-		}
-	}; */
 
   const shuffleArray = (array) => {
     for (var i = array.length - 1; i > 0; i--) {
@@ -79,14 +68,15 @@ const Quiz = () => {
     }
 };
 
-  const failProtocol = () => {
 
+  const postGameProtocol = () => {
+    //ifWin (score == numQuestions)
+      //what to display-- games resources
+    //ifLose (score < numQuestions)
+      //what to display-- retake quiz or exit
   };
 
-  const winProtocol = () => {
-
-  };
-
+  //when icon is pushed, we must reset variables: score, currentQuestion
   const restartQuiz = () => {
 
   };
@@ -118,9 +108,8 @@ const Quiz = () => {
 				<Text style={styles.scoreText}>
 					You scored {score} out of {questions.length}
           {numIncorrect} the inc: {incorrectOne}
-          {/*games or resources are suggested here*/}
 				</Text>
-        //instead we call the win or lose protocol to display what we want
+        //call post game protocol
 			) : (
 				<>
 					<View>
@@ -136,7 +125,7 @@ const Quiz = () => {
 							}
 						</View>
 						<Text style={styles.questionText}>
-							{questions[currentQuestion].questionText} score {score} currentQuestion {currentQuestion} inc1 {incorrectOne} inc2 {incorrectTwo} numInc {numIncorrect}
+							{questions[currentQuestion].questionText}
 						</Text>
 					</View>
 					<View>
