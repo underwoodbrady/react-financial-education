@@ -22,8 +22,29 @@ const Quiz = () => {
 
 	//below is where we can add animations for correct/incorrect answers etc
 	const handleAnswerButtonClick = (isCorrect) => {
+    
+    if (currentQuestion + 1 < questions.length && visitedOne == 0 && visitedTwo == 0) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else if (numIncorrect > 0 && visitedOne == 0) {
+      setCurrentQuestion(incorrectOne);
+      setVisitedOne(1);
+    } else if (numIncorrect == 2 && visitedTwo == 0) {
+      setCurrentQuestion(incorrectTwo);
+      setVisitedTwo(1);
+    } else {
+      if (score + 1 == numQuestions && isCorrect === false) {
+        setShowScore(false);
+      } else {
+        setShowScore(true);
+      }
+    }
+
 		if (isCorrect === true) {
-			setScore(score + 1);
+      if (score + 1 == numQuestions) {
+        setShowScore(true);
+      } else {
+			  setScore(score + 1);
+      }
 		} else {
       //right here we can get mad about 3 incorrect maybe
       if (numIncorrect == 0) {
@@ -37,20 +58,6 @@ const Quiz = () => {
 		}
 
 		//const nextQuestions = currentQuestion + 1;
-    if (score != numQuestions) {
-      if (currentQuestion + 1 < questions.length && visitedOne == 0 && visitedTwo == 0) {
-        setCurrentQuestion(currentQuestion + 1);
-      } else if (numIncorrect > 0 && visitedOne == 0) {
-        setCurrentQuestion(incorrectOne);
-        setVisitedOne(1);
-      } else if (numIncorrect == 2 && visitedTwo == 0) {
-        setCurrentQuestion(incorrectTwo);
-        setVisitedTwo(1);
-      } 
-    } else {
-        setShowScore(true);
-      }
-
   }
 
   //restart function,
