@@ -19,6 +19,7 @@ const Quiz = () => {
 			setScore(score + 1);
 			questions[currentQuestion].questionAnsweredRight = 1;
 		} else {
+      //right here we can get mad about 3 incorrect maybe
 			setIncorrect(numIncorrect + 1);
 		}
 
