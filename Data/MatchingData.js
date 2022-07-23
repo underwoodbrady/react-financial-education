@@ -1,7 +1,7 @@
 const matchingAnswers = [
     {
         number: 1,
-        value: 'hi',
+        value: "hi",
     },
     {
         number: 2,

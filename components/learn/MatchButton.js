@@ -1,8 +1,8 @@
 import { Text, View, Image, StyleSheet, Pressable } from 'react-native';
 
-const MatchButton = ({text = "ButtonText", link, onPress}) => (
+const MatchButton = ({text, link, onPress}) => (
 	<Pressable style = {styles.container}
-			onPress= {() => nav.navigate(link)}
+			onPress= {() => {onPress}}
 			backgroundColor={"blue"}
 		>
 			<Text style={styles.text}>{text}</Text>
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 		borderRadius: 16,
 		padding: 16,
         //flexDirection: 'wrap',
-        width: "33%"
+        width: "100%"
     },
     buttonContainer: {
         flexDirection: 'row'

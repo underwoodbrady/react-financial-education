@@ -9,6 +9,7 @@ const MatchingGame = () => {
 	const [secondClick, setSecondClick] = useState(0); //will be 0 if first click, 1 if second click
     const [currButton, setCurrButton] = useState(0);
     const [currNumberMatch, setCurrNumberMatch] = useState(0);
+    const [gameOver, changeGameOver] = useState(false);
 	//below is where we can add animations for correct/incorrect answers etc
     
 	const buttonClicked = (number) => {
@@ -31,11 +32,17 @@ const MatchingGame = () => {
 	};
 
     return (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        <View>
+        {gameOver ? (
+            <Text>Hi</Text>
+        ) : (
+        <View style={styles.container}>
              {matchingAnswers.map((boxes) => 
              <View>
-                <MatchButton onPress={() => buttonClicked(matchingAnswers.number)}>Hi</MatchButton>
+                <MatchButton onPress={() => buttonClicked(matchingAnswers.number)} text={matchingAnswers.value}/>
             </View> )}
+        </View>
+        )}
         </View>
     );
 };
@@ -43,7 +50,10 @@ const MatchingGame = () => {
 
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        flexDirection: 'row', 
+        flexWrap: 'wrap' 
+    },
     text:{
         color:"white",
         fontSize:24,
