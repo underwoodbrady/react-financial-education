@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MatchButton from "../components/learn/MatchButton";
 import { Button, Text, View, StyleSheet } from "react-native";
 import matchingAnswers from "../Data/MatchingData";
+import QuizButton from "../components/learn/QuizButton";
 
 const MatchingGame = () => {
 
@@ -37,9 +38,9 @@ const MatchingGame = () => {
             <Text>Hi</Text>
         ) : (
         <View style={styles.container}>
-             {matchingAnswers.map((boxes) => 
+             {matchingAnswers.map((matchingAnswers) => 
              <View>
-                <MatchButton onPress={() => buttonClicked(matchingAnswers.number)} text={matchingAnswers.value}/>
+                <MatchButton text={matchingAnswers.value} onPress={() => buttonClicked(matchingAnswers.number)}/>
             </View> )}
         </View>
         )}

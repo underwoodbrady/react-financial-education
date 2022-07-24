@@ -1,7 +1,7 @@
 const matchingAnswers = [
     {
         number: 1,
-        value: "hi",
+        value: 'hi',
     },
     {
         number: 2,
@@ -37,39 +37,39 @@ const matchingAnswers = [
     },
     {
         number: 1,
-        value: "english"
+        value: "english",
     },
     {
         number: 2,
-        value: "spanish"
+        value: "spanish",
     },
     {
         number: 3,
-        value: "french"
+        value: "french",
     },
     {
         number: 4,
-        value: "hebrew"
+        value: "hebrew",
     },
     {
         number: 5,
-        value: "slang"
+        value: "slang",
     },
     {
         number: 6,
-        value: "japanese"
+        value: "japanese",
     },
     {
         number: 7,
-        value: "italian"
+        value: "italian",
     },
     {
         number: 8,
-        value: "german"
+        value: "german",
     },
     {
         number: 9,
-        value: "chinese"
+        value: "chinese",
     },
        
 ]
