@@ -83,7 +83,7 @@ const MatchingGame = () => {
             <View>
                 <View style={styles.container}>
                     {matchingAnswers.map((matchingAnswers) => (
-                    <View>
+                    <View style={styles.buttonContainer}>
                         { !matchingAnswers.disabled ? (
                             <MatchButton text={matchingAnswers.value} onPress={() => buttonClicked(matchingAnswers)}/>
                         ) : (
@@ -105,7 +105,12 @@ const MatchingGame = () => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row', 
-        flexWrap: 'wrap' 
+        flexWrap: 'wrap',
+        margin:16,
+
+    },
+    buttonContainer:{
+        padding:6,
     },
     text:{
         color:"white",

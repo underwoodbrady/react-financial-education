@@ -16,11 +16,11 @@ const MatchButton = ({text = "ButtonText", link, onPress, disabledHere = false})
         styles.container
       ]} onPress={onPress} disabled = {disabledHere}>
         
-        <Text style={() => [
+        <Text style={[
             {
-                color: !disabledHere
-                ? 'white'
-                : 'transparent'
+                color: disabledHere
+                ? 'transparent'
+                : 'white'
             },
             styles.text
         ]}> {text}
@@ -43,16 +43,17 @@ const styles = StyleSheet.create({
 		borderRadius: 16,
 		padding: 16,
         //flexDirection: 'wrap',
-        width: "100%"
+        width: 110,
+        height:75,
     },
     buttonContainer: {
         flexDirection: 'row'
     },
     text:{
-        color: 'white',
         textAlign: "center",
         fontWeight:"600",
         fontSize:15,
+        margin: "auto",
     },
 });
 
