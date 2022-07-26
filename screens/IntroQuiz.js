@@ -136,7 +136,7 @@ const Quiz = () => {
 							{questions[currentQuestion].answerOptions.map(
 								(answerOptions) => (
                   <View style={styles.questionButton}>
-                    <MatchButton text={answerOptions.answerText} onPress={() =>
+                    <QuizButton text={answerOptions.answerText} onPress={() =>
 											handleAnswerButtonClick(
 												answerOptions.isCorrect
 											)}/>

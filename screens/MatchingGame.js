@@ -6,6 +6,7 @@ import QuizButton from "../components/learn/QuizButton";
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 import arrayShuffle from 'array-shuffle';
 
+
 const shuffleArray = (array) => {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -15,7 +16,7 @@ const shuffleArray = (array) => {
     }
 };
 
-shuffleArray(matchingAnswers);
+shuffleArray(matchingAnswers); 
 
 const MatchingGame = () => {
 
