@@ -3,8 +3,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import Budgets from '../screens/Budgets';
-import Goals from '../screens/Goals';
+import Budgets from '../screens/tools/Budgets';
+import Goals from '../screens/tools/Goals';
 
 const Tab = createMaterialTopTabNavigator();
 

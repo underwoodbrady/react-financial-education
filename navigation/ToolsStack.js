@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Tools from "../screens/Tools";
-import Invest from "../screens/Invest";
+import Tools from "../screens/tools/Tools";
+import Invest from "../screens/tools/Invest";
 import PlanningTab from "./PlanningTab";
 
 const Stack = createStackNavigator();

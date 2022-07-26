@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Button } from 'react-native';
 import React, { useState } from 'react';
-import CustomText from '../components/CustomText';
-import SavingsData from '../Data/SavingsNavData';
+import CustomText from '../../components/CustomText';
+import SavingsData from '../../Data/SavingsNavData';
 
 const SavingsLessons = () => {
 	const [currLesson, setCurrLesson] = useState(0);
@@ -13,7 +13,7 @@ const SavingsLessons = () => {
 	}
 
 
-
+/*
     //we will provide navigation to the quiz, article, game and tools for each lesson
 	return (
 		<View>
@@ -34,7 +34,7 @@ const SavingsLessons = () => {
 	);
 
 
-
+*/
 
 };
 

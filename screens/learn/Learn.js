@@ -1,16 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Button, ScrollView } from "react-native";
-import CustomText from "../components/CustomText";
-import LearnPathHeader from "../components/learn/LearnPathHeader";
-import LearnPathNode from "../components/learn/LearnPathNode";
+import CustomText from "../../components/CustomText";
+import LearnPathHeader from "../../components/learn/LearnPathHeader";
+import LearnPathNode from "../../components/learn/LearnPathNode";
 
 import { useNavigation } from "@react-navigation/native";
 
-const banks = require("../assets/banks.png");
-const house = require("../assets/home.png");
-const health = require("../assets/health.png");
-const money = require("../assets/money.png");
-const cardGraph = require("../assets/card-graph.png");
+const banks = require("../../assets/banks.png");
+const house = require("../../assets/home.png");
+const health = require("../../assets/health.png");
+const money = require("../../assets/money.png");
+const cardGraph = require("../../assets/card-graph.png");
 const currSavingQuiz = "Intro Quiz";
 
 const Learn = () => {

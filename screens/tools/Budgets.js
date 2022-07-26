@@ -61,7 +61,7 @@ const mockBudgetData = [
 	},
 ];
 
-import BudgetContainer from '../components/tools/BudgetContainer';
+import BudgetContainer from '../../components/tools/BudgetContainer';
 
 const Budgets = () => (
 	<View style={styles.container}>

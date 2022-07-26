@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import CustomText from '../components/CustomText';
+import CustomText from '../../components/CustomText';
 
-const Course = () => (
+const Profile = () => (
 	<View style={styles.container}>
-		<CustomText>Course</CustomText>
+		<CustomText>Profile</CustomText>
 		<StatusBar style="auto" />
 	</View>
 );
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Course;
+export default Profile;

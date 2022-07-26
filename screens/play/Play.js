@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View, Text, Button } from "react-native";
-import CustomText from "../components/CustomText";
-import GameTab from "../components/play/GameTab";
+import CustomText from "../../components/CustomText";
+import GameTab from "../../components/play/GameTab";
 
 const gameData = [
     {

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import CustomText from '../components/CustomText';
+import CustomText from '../../components/CustomText';
 
 const DailySpin = () => (
 	<View style={styles.container}>

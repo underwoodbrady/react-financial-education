@@ -1,11 +1,11 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Learn from "../screens/Learn";
-import Course from "../screens/Course";
-import Social from "../screens/Social";
-import DailySpin from "../screens/DailySpin";
-import Leaderboard from "../screens/Leaderboard";
-import IntroQuiz from "../screens/IntroQuiz";
+import Learn from "../screens/learn/Learn";
+import Course from "../screens/learn/Course";
+import Social from "../screens/profile/Social";
+import DailySpin from "../screens/play/DailySpin";
+import Leaderboard from "../screens/learn/Leaderboard";
+import IntroQuiz from "../screens/learn/IntroQuiz";
 
 const Stack = createStackNavigator();
 

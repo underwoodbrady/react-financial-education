@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Play from "../screens/Play";
-import MatchingGame from "../screens/MatchingGame";
+import Play from "../screens/play/Play";
+import MatchingGame from "../screens/play/MatchingGame";
 
 const Stack = createStackNavigator();
 

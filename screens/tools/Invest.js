@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, Alert, Image } from "react-native";
-import CustomText from "../components/CustomText";
-import CustomButton from "../components/CustomButton";
+import CustomText from "../../components/CustomText";
+import CustomButton from "../../components/CustomButton";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -31,7 +31,7 @@ const Invest = () => {
                 }}
                 style={{ width: 100, height: 100 }}
             />
-			<Image source={require('../assets/logo.png')}
+			<Image source={require('../../assets/logo.png')}
 					style={{ width: 100, height: 10 }}
 			/>
       		<CustomButton title="hi" size="sm" backgroundColor="#007bff" 

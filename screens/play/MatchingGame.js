@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import MatchButton from "../components/learn/MatchButton";
+import MatchButton from "../../components/learn/MatchButton";
 import { Button, Text, View, StyleSheet, Vibration } from "react-native";
-import matchingAnswers from "../Data/MatchingData";
-import QuizButton from "../components/learn/QuizButton";
+import matchingAnswers from "../../Data/MatchingData";
+import QuizButton from "../../components/learn/QuizButton";
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 import arrayShuffle from 'array-shuffle';
 
@@ -23,7 +23,7 @@ const MatchingGame = () => {
 	const [secondClick, setSecondClick] = useState(0); //will be 0 if first click, 1 if second click
     const [currButton, setCurrButton] = useState(0);
     const [currNumberMatch, setCurrNumberMatch] = useState(0);
-    const [gameOver, changeGameOver] = useState(true);
+    const [gameOver, changeGameOver] = useState(false);
     const [score, setScore] = useState(0);
     const [firstTry, setFirstTry] = useState(true);
 
