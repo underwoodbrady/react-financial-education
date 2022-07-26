@@ -11,6 +11,7 @@ const house = require("../assets/home.png");
 const health = require("../assets/health.png");
 const money = require("../assets/money.png");
 const cardGraph = require("../assets/card-graph.png");
+const currSavingQuiz = "Intro Quiz";
 
 const Learn = () => {
     const nav = useNavigation();
@@ -29,7 +30,8 @@ const Learn = () => {
                 />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
-                <LearnPathNode text="Saving" image={banks} onPress={() => nav.navigate("Intro Quiz")}/>
+                {/*right here we would decide which quiz to go to based on previous success, we can change currSavingQuiz*/}
+                <LearnPathNode text="Saving" image={banks} onPress={() => nav.navigate(currSavingQuiz)}/>
             </View>
             <View
                 style={{

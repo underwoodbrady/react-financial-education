@@ -47,6 +47,7 @@ const Quiz = () => {
       }
 		} else {
       Vibration.vibrate();
+      //TODO: include pop up that says, incorrect, correct answer was _, will need to pass in diff parameter
       if (numIncorrect == 0) {
         setIncorrectOne(currentQuestion);
       } else if (numIncorrect == 1) {
@@ -72,6 +73,9 @@ const Quiz = () => {
   const postGameProtocol = () => {
     //ifWin (score == numQuestions)
       //what to display-- games resources
+      //update the currSavingsGame
+      //update the savings progress bar
+      //add coins to coin total
     //ifLose (score < numQuestions)
       //what to display-- retake quiz or exit
   };
@@ -132,7 +136,7 @@ const Quiz = () => {
 							{questions[currentQuestion].answerOptions.map(
 								(answerOptions) => (
                   <View style={styles.questionButton}>
-                    <QuizButton text={answerOptions.answerText} onPress={() =>
+                    <MatchButton text={answerOptions.answerText} onPress={() =>
 											handleAnswerButtonClick(
 												answerOptions.isCorrect
 											)}/>
