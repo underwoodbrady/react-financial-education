@@ -7,18 +7,25 @@ import Information from '../../components/profile/Information';
 
 const Profile = () => (
 	<View style={styles.container}>
-		<View style={styles.profileCircleOutline}>
-			<View style={styles.profileCircle}>
-				<FontAwesome5 name="dog" size={50} style={styles.profileIcon} />
-			</View>
+		<View style={styles.profileCircle}>
+			<FontAwesome5 name="dog" size={50} style={styles.profileIcon} />
 		</View>
 		<Text style={styles.profileTitle}>Guest</Text>
-		<Information label="Email" sublabel="brady.underwood@envestnet.com" icon="envelope"/>
-		<Information label="Phone" sublabel="123-456-7890" icon="phone"/>
-		<Information label="Learning Path" sublabel="College Saving" icon="graduation-cap"/>
-		<View style={styles.updatePreferences}>
-	<Text style={styles.buttonText}>Update Learning Path</Text>
+		<View style={styles.learningTextContainer}>
+			<Text style={styles.learningTitle}>Learning Path</Text>
+			<Text style={styles.learningPath}> College Saving</Text>
 		</View>
+		<View style={styles.updatePreferences}>
+			<Text style={styles.buttonText}>Update Learning Path</Text>
+		</View>
+		<View style={styles.informationSeparate}>
+			<Information
+				label="Email"
+				sublabel="brady.underwood@envestnet.com"
+				icon="envelope"
+			/>
+		</View>
+		<Information label="Phone" sublabel="123-456-7890" icon="phone" />
 	</View>
 );
 
@@ -29,13 +36,13 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	profileCircleOutline: {
-		width:150,
-		height:150,
-		borderWidth:5,
-		borderRadius:100,
-		borderColor:"#324A60",
-		justifyContent:"center",
-		alignItems: "center",
+		width: 150,
+		height: 150,
+		borderWidth: 5,
+		borderRadius: 100,
+		borderColor: '#324A60',
+		justifyContent: 'center',
+		alignItems: 'center',
 		marginBottom: 12,
 	},
 	profileCircle: {
@@ -45,6 +52,7 @@ const styles = StyleSheet.create({
 		borderRadius: 100,
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginBottom: 16,
 	},
 	profileIcon: {
 		color: '#0D7ABB',
@@ -53,20 +61,39 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontWeight: '600',
 		fontSize: 20,
-		marginBottom:16,
+		marginBottom: 16,
+		textDecoration: 'underline',
 	},
-	updatePreferences:{
-		width:200,
-		height:50,
-		borderWidth:2,
-		borderColor:"white",
-		borderRadius:15,
-		alignItems:"center",
-		justifyContent:"center",
+	learningTitle: {
+		color: 'white',
+		fontSize: 16,
+		fontWeight: '600',
+		marginRight: 12,
 	},
-	buttonText:{
-		color:"white",
-		fontWeight:"600",
+	learningPath: {
+		fontSize: 16,
+		color: 'white',
+	},
+	informationSeparate:{
+		marginBottom:24,
+	},
+	learningTextContainer: {
+		flexDirection: 'row',
+		marginBottom: 24,
+	},
+	updatePreferences: {
+		width: 200,
+		height: 50,
+		borderWidth: 2,
+		borderColor: 'white',
+		borderRadius: 15,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginBottom: 32,
+	},
+	buttonText: {
+		color: 'white',
+		fontWeight: '600',
 	},
 });
 
