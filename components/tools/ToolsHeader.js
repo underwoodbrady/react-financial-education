@@ -2,16 +2,15 @@ import { Text, View, Image, StyleSheet, Pressable } from 'react-native';
 import SmallButton from '../SmallButton';
 import { useState, useEffect} from 'react';
 
-const ToolsHeader = ({ tabs }) => {
-	const [selectedTab, setSelectedTab] = useState(tabs[0]);
+const ToolsHeader = ({ tabs, selectedTab, setSelectedTab }) => {
 	return (
 		<View style={styles.container}>
-			{tabs.map((tab) => (
+			{tabs.map((tab, i) => (
 				<View style={styles.separator} key={tab}>
 					<SmallButton
 						title={tab}
-						isSelected={selectedTab == tab}
-						onPress={() => setSelectedTab(tab)}
+						isSelected={selectedTab == i}
+						onPress={() => setSelectedTab(i)}
 					/>
 				</View>
 			))}

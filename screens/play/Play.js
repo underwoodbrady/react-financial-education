@@ -32,11 +32,10 @@ const Play = () => {
     return (
         <View style={styles.container}>
             {gameData.map((game, i) => (
-                <View style={styles.gameTabContainer}>
+                <View style={styles.gameTabContainer} key={game.title}>
                     <GameTab
                         title={game.title}
                         description={game.description}
-                        key={Math.random()}
                         percentComplete={game.percentComplete}
                         color={game.color}
                         icon={game.icon}

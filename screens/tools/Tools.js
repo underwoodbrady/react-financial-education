@@ -3,6 +3,7 @@ import { StyleSheet, View, Button, ScrollView } from "react-native";
 import CustomText from "../../components/CustomText";
 
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
 import ToolsHeader from "../../components/tools/ToolsHeader";
 import ToolsContent from "../../components/tools/ToolsContent";
@@ -28,12 +29,14 @@ import IconButton from "../../components/IconButton";
 
 const Tools = () => {
     const nav = useNavigation();
+    const [selectedTab, setSelectedTab] = useState(0);
+
     return (
         <View style={styles.container}>
             <ScrollView contentContainerStyle={styles.scroll}>
                 <View style={styles.highlightContainer}>
                     <View style={styles.headerSpacing}>
-                        <ToolsHeader tabs={["Net Worth", "Spending", "Investments"]} />
+                        <ToolsHeader tabs={["Net Worth", "Spending", "Investments"]} selectedTab={selectedTab} setSelectedTab={(tab)=>setSelectedTab(tab)}/>
                     </View>
                     <ToolsContent />
                 </View>
