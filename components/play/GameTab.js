@@ -35,7 +35,7 @@ const GameTab = ({
 const styles = StyleSheet.create({
     container: {
         width: 360,
-        borderWidth: 2,
+        borderWidth: 3,
         borderColor: "#324A60",
         borderRadius: 16,
         padding: 16,

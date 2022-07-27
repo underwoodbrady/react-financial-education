@@ -178,7 +178,7 @@ const Quiz = () => {
 					<View>
 						{questions[currentQuestion].answerOptions.map(
 							(answerOptions) => (
-								<View style={styles.questionButton}>
+								<View style={styles.questionButton} key={answerOptions.answerText}>
 									<QuizButton
 										text={answerOptions.answerText}
 										onPress={() =>
