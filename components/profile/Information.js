@@ -18,14 +18,18 @@ const styles = StyleSheet.create({
         width: 320,
     },
     text:{
-        marginLeft:16,
+        marginLeft:24,
     },
 	label: {
-		color: 'white',
-	},
-	subLabel: {
-		color: 'white',
-	},
+        color: "white",
+        fontSize: 15,
+        fontWeight: "600",
+        marginBottom: 2,
+    },
+    subLabel: {
+        color: "#B6C5D4",
+        fontSize: 13,
+    },
 });
 
 export default Information;
