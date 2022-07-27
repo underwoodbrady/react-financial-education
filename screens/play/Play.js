@@ -39,10 +39,10 @@ const Play = () => {
                         percentComplete={game.percentComplete}
                         color={game.color}
                         icon={game.icon}
+                        onPress={()=>nav.navigate(game.title)}
                     />
                 </View>
             ))}
-            <Button title="Go to matching game" onPress={() => nav.navigate("Matching Game")}/>
         </View>
     );
 };

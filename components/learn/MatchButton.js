@@ -26,14 +26,6 @@ const MatchButton = ({text = "ButtonText", link, onPress, disabledHere = false})
         ]}> {text}
         </Text>
 	</Pressable>
-    
-    /*
-	<Pressable style = {styles.container}
-			onPress= {() => {onPress}}
-			backgroundColor={"blue"}
-		>
-			<Text style={styles.text}>{text}</Text>
-    	</Pressable> */
 );
 
 const styles = StyleSheet.create({

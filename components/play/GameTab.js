@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Image } from "react-native";
+import { StyleSheet, Text, View, Button, Image, Pressable } from "react-native";
 
 import { Entypo } from "@expo/vector-icons";
 
@@ -10,8 +10,9 @@ const GameTab = ({
     icon = "puzzle",
     percentComplete,
     color,
+    onPress
 }) => (
-    <View style={[styles.container, percentComplete==="100%" && {borderColor:color}]}>
+    <Pressable style={[styles.container, percentComplete==="100%" && {borderColor:color}]} onPress={onPress}>
         {percentComplete!=="100%" && <View
             style={[
                 styles.fillColor,
@@ -28,7 +29,7 @@ const GameTab = ({
         <View style={styles.percentContainer}>
             <Entypo name="chevron-right" size={24} color={percentComplete==="100%" ? "white" : "#B6C5D4"} />
         </View>
-    </View>
+    </Pressable>
 );
 
 const styles = StyleSheet.create({
