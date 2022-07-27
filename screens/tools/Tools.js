@@ -33,7 +33,7 @@ const Tools = () => {
             <ScrollView contentContainerStyle={styles.scroll}>
                 <View style={styles.highlightContainer}>
                     <View style={styles.headerSpacing}>
-                        <ToolsHeader />
+                        <ToolsHeader tabs={["Net Worth", "Spending", "Investments"]} />
                     </View>
                     <ToolsContent />
                 </View>
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     },
     scroll: {
         alignItems: "center",
+
     },
     headerSpacing: {
         marginBottom: 32,

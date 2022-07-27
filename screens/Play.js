@@ -1,5 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View, Text, Button } from "react-native";
+import { TabBarItem } from "react-native-tab-view";
 import CustomText from "../components/CustomText";
 import GameTab from "../components/play/GameTab";
 
@@ -32,11 +33,10 @@ const Play = () => {
     return (
         <View style={styles.container}>
             {gameData.map((game, i) => (
-                <View style={styles.gameTabContainer}>
+                <View style={styles.gameTabContainer} key={game.title}>
                     <GameTab
                         title={game.title}
                         description={game.description}
-                        key={Math.random()}
                         percentComplete={game.percentComplete}
                         color={game.color}
                         icon={game.icon}

@@ -5,7 +5,7 @@ import AddElement from "./AddElement";
 const BudgetContainer = ({ budgetsData = [] }) => (
     <ScrollView style={styles.container}>
         {budgetsData.map((budget, i) => (
-            <View style={styles.budget}>
+            <View style={styles.budget} key={budget.text}>
                 <Budget
                     label={budget.text}
                     i={i + 1}
