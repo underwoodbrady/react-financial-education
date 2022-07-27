@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import MatchButton from "../../components/learn/MatchButton";
+import MatchButton from "../components/learn/MatchButton";
 import { Button, Text, View, StyleSheet, Vibration } from "react-native";
-import matchingAnswers from "../../Data/MatchingData";
-import QuizButton from "../../components/learn/QuizButton";
+import matchingAnswers from "../Data/MatchingData";
+import QuizButton from "../components/learn/QuizButton";
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 import arrayShuffle from 'array-shuffle';
 
@@ -16,6 +16,7 @@ const shuffleArray = (array) => {
     }
 };
 
+shuffleArray(matchingAnswers); 
 
 const MatchingGame = () => {
 
@@ -23,32 +24,37 @@ const MatchingGame = () => {
 	const [secondClick, setSecondClick] = useState(0); //will be 0 if first click, 1 if second click
     const [currButton, setCurrButton] = useState(0);
     const [currNumberMatch, setCurrNumberMatch] = useState(0);
-    const [gameOver, changeGameOver] = useState(true);
-    const [score, setScore] = useState(0);
-    const [firstTry, setFirstTry] = useState(true);
-    const [gameTime, setGameTime] = useState(0);
+    const [gameOver, changeGameOver] = useState(false);
+    const [score,setScore] = useState(0);
 
-    const [isStopwatchStart, setIsStopwatchStart] = useState(false);
-    const [resetStopwatch, setResetStopwatch] = useState(false);
 
 	//below is where we can add animations for correct/incorrect answers etc
     
 	const buttonClicked = (theButton) => {
 
-        if (!(currButton == theButton && secondClick == 1)) {
+        //make sure number is not disabled
+        
+        if (!(currButton == theButton && secondClick == 1)) { //TODO: can't allow user to hit the same button twice
+
             if (secondClick === 0) {
                 setCurrMatchSelected(theButton.number);
                 setCurrButton(theButton);
                 //make the button light up
             } else {
-                if (theButton.number == currNumberMatch) { //yay
+                if (theButton.number == currNumberMatch) {
+                    //yay
+                    //make the theButton and currButton turn green briefly
+                    //disable theButton and currButton -- disable clickability and make transparent
                     if (score == (matchingAnswers.length / 2) - 1) {
-                        gameOverProtocol();
+                        changeGameOver(true);
                     }
                     theButton.disabled = 1;
                     currButton.disabled = 1;
                     setScore(score+1);
-                } else { //boo
+                } else {
+                    //boo
+                    //get both buttons to turn red briefly
+                    //unlight up 
                     Vibration.vibrate();
                 }
             } 
@@ -59,25 +65,12 @@ const MatchingGame = () => {
 	};
 
     const gameOverProtocol = () => {
-        changeGameOver(true);
-        setFirstTry(false);
-        setIsStopwatchStart(false);
-        //setGameTime(getTime());
         //<Text style={styles.text}>Hi</Text>
         // put the time out there
         //if first try, just offer the start
         //if not the first try, then we give them the score and start the timer on button press
-        
-    }
 
-    const startGame = () => {
-        //convert gameOver to 0
-        setResetStopwatch(true);
-        changeGameOver(false);
-        shuffleArray(matchingAnswers); 
-        {matchingAnswers.map((matchingAnswers) => (matchingAnswers.disabled = 0))}
-        setIsStopwatchStart(true);
-        //start the timer
+
     }
 
     return (
@@ -85,34 +78,10 @@ const MatchingGame = () => {
         {gameOver ? (
             
             //maybe change this to game start AND game stop...?
-            //gameOverProtocol(),
-            <View>
-                <View style={styles.container}>
-                    <MatchButton text="start" onPress={() => startGame()}></MatchButton> {/*this will say restart if not first try*/}
-                    <MatchButton text="exit"></MatchButton>
-                    <Text style = {styles.text}>{gameTime}</Text>
-                    {/*<Text style = {styles.text}>{score}</Text> {/*will only display if not first try, also display time and not score
-                    also need to make sure we reset the timer but can store the recent score in a temp variable, maybe trace high score*/}
-                </View>
-            </View>
-
-
+            gameOverProtocol()
         ) : (
             <View>
                 <View style={styles.container}>
-                    <Stopwatch
-                        laps
-                        msecs
-                        start={isStopwatchStart}
-                        //To start
-                        //reset={resetStopwatch}
-                        //To reset
-                        //options={options}
-                        //options for the styling
-                        getTime={(time) => {
-                            console.log(time);
-                        }}
-                    />
                     {matchingAnswers.map((matchingAnswers) => (
                     <View style={styles.buttonContainer}>
                         { !matchingAnswers.disabled ? (
