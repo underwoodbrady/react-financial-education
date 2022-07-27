@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     },
     fillColor: {
         width: "40%",
-        opacity: 0.5,
+        opacity: 1,
         height: 6,
         backgroundColor: "red",
         position: "absolute",
