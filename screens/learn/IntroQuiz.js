@@ -156,8 +156,8 @@ const Quiz = () => {
 					You scored {score} out of {questions.length}
 					{numIncorrect} the inc: {incorrectOne}
 				</Text>
-			) : (
 				//call post game protocol
+			) : (
 				<>
 					<View>
 						<View style={styles.hearts}>

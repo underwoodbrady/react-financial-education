@@ -50,7 +50,6 @@ const MatchingGame = () => {
 					Vibration.vibrate();
 				}
 			}
-
 			setSecondClick((secondClick + 1) % 2);
 			setCurrNumberMatch(theButton.number);
 		}
@@ -112,7 +111,7 @@ const MatchingGame = () => {
 							//options={options}
 							//options for the styling
 							getTime={(time) => {
-								//console.log(time);
+								console.log(time);
 							}}
 						/>
 						{matchingAnswers.map((matchingAnswers) => (

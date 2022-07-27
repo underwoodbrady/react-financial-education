@@ -6,6 +6,7 @@ import Social from "../screens/profile/Social";
 import DailySpin from "../screens/play/DailySpin";
 import Leaderboard from "../screens/learn/Leaderboard";
 import IntroQuiz from "../screens/learn/IntroQuiz";
+import SavingsLessons from "../screens/learn/SavingsLessons";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ const LearningStack = () => (
         <Stack.Screen name="Daily Spin" component={DailySpin} />
         <Stack.Screen name="Leaderboard" component={Leaderboard} />
         <Stack.Screen name="Intro Quiz" component={IntroQuiz} />
+        <Stack.Screen name="Savings Lessons" component={SavingsLessons} />
     </Stack.Navigator>
 );
 
