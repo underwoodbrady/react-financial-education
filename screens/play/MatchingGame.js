@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import MatchButton from '../../components/learn/MatchButton';
-import { Button, Text, View, StyleSheet, Vibration } from 'react-native';
+import { Button, Text, View, StyleSheet, Vibration, Pressable } from 'react-native';
 import matchingAnswers from '../../Data/MatchingData';
 import QuizButton from '../../components/learn/QuizButton';
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 import arrayShuffle from 'array-shuffle';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 const shuffleArray = (array) => {
 	for (var i = array.length - 1; i > 0; i--) {
@@ -66,6 +67,26 @@ const MatchingGame = () => {
 		//if not the first try, then we give them the score and start the timer on button press
 	};
 
+	const restartButton = () => {
+		return (
+			<Pressable style = {styles.buttons} onPress={()=>restartFunction()}>
+				<MaterialCommunityIcons name="restart" size={24} color="white" />
+			</Pressable>
+		)
+	}
+
+	const restartFunction = () => {
+		setResetStopwatch(true);
+		changeGameOver(false);
+		shuffleArray(matchingAnswers);
+		{
+			matchingAnswers.map(
+				(matchingAnswers) => (matchingAnswers.disabled = 0)
+			);
+		}
+		setIsStopwatchStart(true);
+	}
+
 	const startGame = () => {
 		//convert gameOver to 0
 		setResetStopwatch(true);
@@ -101,14 +122,14 @@ const MatchingGame = () => {
 			) : (
 				<View>
 					<View style={styles.container}>
+						{restartButton()}
 						<Stopwatch
 							laps
-							msecs
 							start={isStopwatchStart}
 							//To start
 							//reset={resetStopwatch}
 							//To reset
-							//options={options}
+							options={options}
 							//options for the styling
 							getTime={(time) => {
 								console.log(time);
@@ -159,5 +180,20 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 	},
 });
+
+const options = {
+	container: {
+	  backgroundColor: 'transparent',
+	  padding: 5,
+	  borderRadius: 5,
+	  width: 200,
+	  alignItems: 'center',
+	},
+	text: {
+	  fontSize: 25,
+	  color: 'white',
+	  marginLeft: 7,
+	},
+}
 
 export default MatchingGame;
