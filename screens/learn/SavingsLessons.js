@@ -9,6 +9,7 @@ import Quiz from './IntroQuiz';
 import { FontAwesome } from '@expo/vector-icons';
 
 const SavingsLessons = () => {
+	const nav = useNavigation();
 	const [currLesson, setCurrLesson] = useState(0);
 	const [forwardActive, changeForwardActive] = useState(true);
 	const [backwardActive, changeBackwardActive] = useState(false);
@@ -84,7 +85,11 @@ const SavingsLessons = () => {
 								<View key={ButtonLinks.title}>
 									<QuizButton
 										text={ButtonLinks.title}
-										
+										//open different page
+										onPress={() =>
+											nav.navigate("Matching Game")
+										}
+
 									/>
 								</View>
 							)
@@ -111,8 +116,6 @@ const styles = StyleSheet.create({
 		borderColor: '#324A60',
 		borderColor: 'white',
 		alignSelf: "center",
-		marginTop: 5,
-		marginRight: 5,
 	},
 });
 

@@ -6,6 +6,7 @@ import QuizButton from '../../components/learn/QuizButton';
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 import arrayShuffle from 'array-shuffle';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { useNavigation } from '@react-navigation/native';
 
 const shuffleArray = (array) => {
 	for (var i = array.length - 1; i > 0; i--) {
@@ -17,6 +18,7 @@ const shuffleArray = (array) => {
 };
 
 const MatchingGame = () => {
+	const nav = useNavigation();
 	const [currMatchSelected, setCurrMatchSelected] = useState(0);
 	const [secondClick, setSecondClick] = useState(0); //will be 0 if first click, 1 if second click
 	const [currButton, setCurrButton] = useState(0);
@@ -57,9 +59,12 @@ const MatchingGame = () => {
 	};
 
 	const gameOverProtocol = () => {
+		//setGameTime();
 		changeGameOver(true);
 		setFirstTry(false);
 		setIsStopwatchStart(false);
+		setResetStopwatch(true);
+
 		//setGameTime(getTime());
 		//<Text style={styles.text}>Hi</Text>
 		// put the time out there
@@ -76,20 +81,26 @@ const MatchingGame = () => {
 	}
 
 	const restartFunction = () => {
-		setResetStopwatch(true);
+		//we need to reset the time, score, click num
 		changeGameOver(false);
+		setScore(0);
+		setResetStopwatch(true);
+		setIsStopwatchStart(true);
+		setSecondClick(0);
 		shuffleArray(matchingAnswers);
 		{
 			matchingAnswers.map(
 				(matchingAnswers) => (matchingAnswers.disabled = 0)
 			);
 		}
-		setIsStopwatchStart(true);
+
 	}
 
 	const startGame = () => {
 		//convert gameOver to 0
-		setResetStopwatch(true);
+		setScore(0);
+		setSecondClick(0);
+		//setResetStopwatch(true);
 		changeGameOver(false);
 		shuffleArray(matchingAnswers);
 		{
@@ -97,9 +108,17 @@ const MatchingGame = () => {
 				(matchingAnswers) => (matchingAnswers.disabled = 0)
 			);
 		}
+		setResetStopwatch(false);
 		setIsStopwatchStart(true);
 		//start the timer
 	};
+
+	/*TODO: add functionality here */
+	const exit = () => {
+		//change game over
+		changeGameOver(true);
+		//navigate out of there
+	}
 
 	/*this will say restart if not first try*/
 
@@ -115,26 +134,30 @@ const MatchingGame = () => {
 							text="start"
 							onPress={() => startGame()}
 						></MatchButton>
-						<MatchButton text="exit"></MatchButton>
+						<MatchButton text="exit" onPress={() => exit()}></MatchButton> 
 						<Text style={styles.text}>{gameTime}</Text>
 					</View>
 				</View>
 			) : (
 				<View>
 					<View style={styles.container}>
-						{restartButton()}
 						<Stopwatch
 							laps
 							start={isStopwatchStart}
 							//To start
-							//reset={resetStopwatch}
+							reset={resetStopwatch}
 							//To reset
 							options={options}
 							//options for the styling
 							getTime={(time) => {
 								console.log(time);
+								setGameTime(time);
 							}}
 						/>
+						<Pressable style = {styles.buttons} onPress={()=>restartFunction()}>
+							<MaterialCommunityIcons name="restart" size={24} color="white" />
+						</Pressable>
+						{/*{setResetStopwatch(false)}*/}
 						{matchingAnswers.map((matchingAnswers) => (
 							<View style={styles.buttonContainer}>
 								{!matchingAnswers.disabled ? (
