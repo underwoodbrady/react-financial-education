@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, ScrollView } from "react-native";
 import { useState } from "react";
+import ButtonPrimary from "../../components/ButtonPrimary";
 
 const Article = () => {
     const [scrollPos, setScrollPos] = useState(1);
@@ -17,11 +18,14 @@ const Article = () => {
                         },
                 ]}></View>
 
-            
-                <View style={[styles.buttonContainer, scrollPos / (viewHeight - offset) > 0.9 && {opacity:1}]}>
-                    <Text style={styles.buttonText}>Continue</Text>
-                </View>
-            
+            <View
+                style={[
+                    styles.buttonContainer,
+                    scrollPos / (viewHeight - offset) > 0.9 && { opacity: 1 },
+                ]}>
+                <ButtonPrimary text="Continue" />
+            </View>
+
             <ScrollView
                 contentContainerStyle={{
                     alignItems: "center",
@@ -96,11 +100,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         bottom: 26,
         alignSelf: "center",
-        borderRadius: 16,
-        backgroundColor: "white",
-        paddingVertical: 8,
-        paddingHorizontal: 36,
-        opacity:0,
+        opacity: 0,
     },
     buttonText: {
         textAlign: "center",

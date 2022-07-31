@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         color:'#0A1E2D',
         fontSize:18,
         fontWeight:"500",
+        textAlign:"center",
     },
 
 });
