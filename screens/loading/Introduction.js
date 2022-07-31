@@ -24,7 +24,7 @@ const Introduction = () => {
         },3000)
         return () => clearInterval(dotAnim);
     },[panelActive, setPanelActive])
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.panel}>
@@ -40,7 +40,7 @@ const Introduction = () => {
                     ]}
                 />
             </View>
-            <ButtonPrimary onPress={()=>nav.navigate("AppSignIn")}/>
+            <ButtonPrimary onPress={()=>nav.navigate("AppSignIn")} text="Get Started"/>
         </View>
     );
 };

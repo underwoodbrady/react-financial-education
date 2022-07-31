@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, Pressable } from "react-native";
 
 const ButtonPrimary = ({text, onPress}) => (
     <Pressable style={({ pressed })=>[styles.container, pressed && styles.buttonPressed]} onPress={onPress}>
-        <Text style={styles.text}>Get Started</Text>
+        <Text style={styles.text}>{text}</Text>
     </Pressable>
 );
 
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor:"white",
         paddingVertical:16,
-        paddingHorizontal:72,
+        paddingHorizontal:80,
         borderRadius:12,
     },
     buttonPressed:{
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'#0A1E2D',
-        fontSize:20,
+        fontSize:18,
         fontWeight:"500",
     },
 

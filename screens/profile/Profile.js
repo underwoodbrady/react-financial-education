@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
 		fontWeight: '600',
 		fontSize: 20,
 		marginBottom: 16,
-		textDecoration: 'underline',
 	},
 	learningTitle: {
 		color: 'white',
