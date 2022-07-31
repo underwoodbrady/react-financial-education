@@ -86,7 +86,7 @@ const SavingsLessons = () => {
                         {SavingsData[currLesson].questionText}
                     </Text>
                     <Text style={styles.subHeaderText}>
-                        Objectives Complete: 2/3
+                        Objectives Complete: 1/3
                     </Text>
                 </View>
                 {SavingsData[currLesson].ButtonLinks.map((ButtonLinks, i) => (
@@ -94,7 +94,17 @@ const SavingsLessons = () => {
                         <LessonButton
                             text={ButtonLinks.title}
                             //open different page
-                            onPress={() => nav.navigate('Learn', { screen: 'Article' })}
+                            onPress={() =>
+                                nav.navigate(ButtonLinks.rootLink || "Learn", {
+                                    screen:
+                                        ButtonLinks.screenLink ||
+                                        "Savings Lessons",
+                                    params: {
+                                        data: ButtonLinks.data ||
+                                        "",
+                                    },
+                                })
+                            }
                             checked={i === 0}
                         />
                     </View>

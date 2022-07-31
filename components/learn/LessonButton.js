@@ -1,4 +1,4 @@
-import { Text, StyleSheet, Pressable, View} from "react-native";
+import { Text, StyleSheet, Pressable, View } from "react-native";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 
@@ -15,7 +15,14 @@ const LessonButton = ({ text = "ButtonText", onPress, checked }) => {
             icon = <FontAwesome5 name="gamepad" size={20} color="white" />;
             break;
         case "Tool":
+        case "Budgetting Tool":
             icon = <FontAwesome5 name="tools" size={20} color="white" />;
+            break;
+        case "Flashcards":
+            icon = <FontAwesome5 name="lightbulb" size={20} color="white" />;
+            break;
+        case "Video":
+            icon = <FontAwesome5 name="video" size={20} color="white" />;
             break;
         default:
             icon = (
@@ -36,7 +43,11 @@ const LessonButton = ({ text = "ButtonText", onPress, checked }) => {
                 {icon}
                 <Text style={styles.text}>{text}</Text>
             </View>
-            {checked ? <FontAwesome5 name="check" size={20} color="#228D23" /> : <FontAwesome5 name="angle-right" size={20} color="#B6C5D4" />}
+            {checked ? (
+                <FontAwesome5 name="check" size={20} color="#228D23" />
+            ) : (
+                <FontAwesome5 name="angle-right" size={20} color="#B6C5D4" />
+            )}
         </Pressable>
     );
 };
@@ -49,13 +60,12 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         padding: 16,
         flexDirection: "row",
-        alignItems:"center",
-        justifyContent:"space-between",
-
+        alignItems: "center",
+        justifyContent: "space-between",
     },
-    leftContainer:{
-        flexDirection:"row",
-        alignItems:"center",
+    leftContainer: {
+        flexDirection: "row",
+        alignItems: "center",
     },
     text: {
         color: "white",

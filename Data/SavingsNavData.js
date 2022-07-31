@@ -3,18 +3,18 @@ const SavingsData = [
         questionText: "Lesson One: Basics",
         questionColor: "#1290DC",
         ButtonLinks: [
-            { title: "Article", link: "" },
-            { title: "Quiz", link: "" },
-            { title: "Matching Game", link: "" },
+            { title: "Article", rootLink: "Learn", screenLink:"Article", data:"Data/LessonData/ArticleData/article_1" },
+            { title: "Quiz", rootLink: "Learn", screenLink:"Intro Quiz", data:"Data/LessonData/ArticleData/article_1"  },
+            { title: "Matching Game", rootLink: "Play", screenLink:"Matching Game", data:"Data/LessonData/ArticleData/article_1"  },
         ],
     },
     {
         questionText: "Lesson Two: Advanced",
         questionColor: "#3F50B1",
         ButtonLinks: [
-            { title: "Article", link: "" },
-            { title: "Flashcards", link: "" },
-            { title: "Budgetting Tool", link: "" },
+            { title: "Article",  rootLink: "Learn", screenLink:"Article", data:"Data/LessonData/ArticleData/article_1" },
+            { title: "Flashcards", rootLink: "Learn", screenLink:"Flashcards", data:"Data/LessonData/ArticleData/article_1" },
+            { title: "Budgetting Tool", rootLink: "Tools", screenLink:"Planning", data:"Data/LessonData/ArticleData/article_1"},
         ],
     },
     {
