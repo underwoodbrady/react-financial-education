@@ -1,15 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Button, ScrollView } from "react-native";
-import CustomText from "../../components/CustomText";
 
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
-import ToolsHeader from "../../components/tools/ToolsHeader";
-import ToolsContent from "../../components/tools/ToolsContent";
+import Investments from "./ToolsTabs/Investments";
 
-import RecentActions from "../../components/tools/RecentActions";
-import IconButton from "../../components/IconButton";
+import Toolkit from "./ToolsTabs/Toolkit";
+
+import ToolsHeader from "../../components/tools/ToolsHeader";
 
 /**
  * Tools header
@@ -33,66 +31,27 @@ const Tools = () => {
 
     return (
         <View style={styles.container}>
-            <ScrollView contentContainerStyle={styles.scroll}>
-                <View style={styles.highlightContainer}>
-                    <View style={styles.headerSpacing}>
-                        <ToolsHeader tabs={["Net Worth", "Spending", "Investments"]} selectedTab={selectedTab} setSelectedTab={(tab)=>setSelectedTab(tab)}/>
-                    </View>
-                    <ToolsContent />
-                </View>
-                <View style={styles.contentContainer}>
-                    <View style={styles.actions}>
-                        <RecentActions />
-                    </View>
-                    <View style={styles.footerButtons}>
-                        <IconButton
-                            icon="clipboard-list"
-                            label="Planning"
-                            onPress={() => nav.navigate("Planning")}
-                        />
-                        <IconButton
-                            icon="calculator"
-                            label="Budgets"
-                            onPress={() => nav.navigate("Planning")}
-                        />
-                    </View>
-                </View>
-            </ScrollView>
+            <View style={[styles.headerSpacing, selectedTab === 1 && {backgroundColor:"#4099F2"}]}>
+                <ToolsHeader
+                    tabs={["Toolkit", "Investing", "Saving"]}
+                    selectedTab={selectedTab}
+                    setSelectedTab={(tab) => setSelectedTab(tab)}
+                />
+            </View>
+            {selectedTab === 0 && <Toolkit/>}
+            {selectedTab === 1 &&<Investments />}
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-    },
-    scroll: {
-        alignItems: "center",
-
+        flex: 1,
     },
     headerSpacing: {
-        marginBottom: 32,
-    },
-    highlightContainer: {
-        backgroundColor: "#4099F2",
-        width: "100%",
-        alignItems: "center",
-        paddingVertical: 52,
-        borderBottomRightRadius: 20,
-        borderBottomLeftRadius: 20,
-    },
-    contentContainer: {
-        alignItems: "center",
-    },
-    actions: {
-        paddingBottom: 32,
-        paddingTop: 24,
-    },
-    footerButtons: {
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        width: "100%",
-        marginBottom: 32,
+        paddingTop:32,
+        paddingBottom:24,
+        alignItems:"center",
     },
 });
 

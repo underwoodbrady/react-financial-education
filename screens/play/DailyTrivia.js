@@ -8,11 +8,12 @@ const DailyTrivia = () => {
     let [gameActive, setGameActive] = useState(false);
     let [timeLeft, setTimeLeft] = useState(3);
     useEffect(()=>{
-        setTimeout(()=>{
+        let interval = setTimeout(()=>{
             if(gameActive) return;
             if(timeLeft <= 0) setGameActive(true);
             setTimeLeft(timeLeft-0.015);
         },10)
+        return (()=> clearInterval(interval));
     }, [timeLeft])
     return (
         <View style={styles.container}>

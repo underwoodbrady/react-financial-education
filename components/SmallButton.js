@@ -11,20 +11,21 @@ const styles = StyleSheet.create({
     container: {
         borderRadius: 12,
         borderWidth: 3,
-        borderColor: "white",
+        borderColor: "#D4DFEA",
         paddingVertical: 8,
         paddingHorizontal: 12,
     },
     isSelected: {
         backgroundColor:"white",
+        borderColor:"white",
     },
     title:{
-        color:"white",
+        color:"#D4DFEA",
         fontWeight: "500",
         fontSize:13,
     },
     isSelectedText:{
-        color:"#4099F2",
+        color:"#01101B",
     }
 });
 
