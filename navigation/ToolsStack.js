@@ -11,7 +11,7 @@ const ToolsStack = () => (
         headerShown:true,
         headerStyle: {backgroundColor:"#0A1E2D"},
     }}>
-        <Stack.Screen name="Overview" component={Tools} options={{headerShown:false}}/>
+        <Stack.Screen name="Overview" component={Tools} options={{headerShown:false }}/>
         <Stack.Screen name="Invest" component={Invest}/>
         <Stack.Screen name="Planning" component={PlanningTab} options={{headerShown:false}}/>
     </Stack.Navigator>

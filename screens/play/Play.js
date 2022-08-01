@@ -2,27 +2,28 @@ import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View, Text, Button } from "react-native";
 import CustomText from "../../components/CustomText";
 import GameTab from "../../components/play/GameTab";
+import GameHeaderButton from "../../components/play/GameHeaderButton";
 
 const gameData = [
     {
         title: "Matching Game",
         description: "Game about matching stuff",
         icon: "puzzle",
-        color: "#FFB0C2",
+        color: "#FFA08E",
         percentComplete: "100%",
     },
     {
         title: "Ticker Guesser",
         description: "Guess that ticker bro",
         icon: "format-letter-matches",
-        color: "#CCE6E9",
+        color: "#ACDBFE",
         percentComplete: "80%",
     },
     {
         title: "Astroids Game",
         description: "Shoot em",
         icon: "rocket",
-        color: "#EACAF7",
+        color: "#DF8EEB",
         percentComplete: "40%",
     },
 ];
@@ -31,6 +32,10 @@ const Play = () => {
     const nav = useNavigation();
     return (
         <View style={styles.container}>
+            <View style={styles.header}>
+                <GameHeaderButton text="Leaderboards" color="#6F63FF"/>
+                <GameHeaderButton text="Daily Trivia" color="#FF9263" onPress={() => nav.navigate("Daily Trivia")}/>
+            </View>
             {gameData.map((game, i) => (
                 <View style={styles.gameTabContainer} key={game.title}>
                     <GameTab
@@ -53,6 +58,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "flex-start",
         marginTop: 24,
+    },
+    header:{
+        flexDirection:"row",
+        width:"100%",
+        justifyContent:"space-around",
+        marginTop:8,
+        marginBottom:20,
+        paddingHorizontal:16,
     },
     gameTabContainer: {
         marginTop: 10,

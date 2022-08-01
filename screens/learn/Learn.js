@@ -43,7 +43,7 @@ const Learn = () => {
                 <View style={{ marginRight: 36 }}>
                     <LearnPathNode text="Long Term" image={health} />
                 </View>
-                <LearnPathNode text="Short Long" image={house} />
+                <LearnPathNode text="Short Term" image={house} />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
                 <LearnPathNode text="Inflation" image={money}/>

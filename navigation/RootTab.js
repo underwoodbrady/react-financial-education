@@ -29,7 +29,6 @@ const RootTab = () => (
 		}}/>
 		<Tab.Screen name="Tools" component={ToolsStack} options={{
 			tabBarIcon: ({color}) => <FontAwesome5 name='tools' size={20} color={color}/>,
-			headerShown: false,
 		}} />
 		<Tab.Screen name="Profile" component={ProfileStack} options={{
 			tabBarIcon: ({color}) => <Ionicons name="person" size={24} color={color} />,

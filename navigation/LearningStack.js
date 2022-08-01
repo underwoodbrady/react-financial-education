@@ -1,5 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
+import { Text } from "react-native";
+
 import Learn from "../screens/learn/Learn";
 import Course from "../screens/learn/Course";
 import Social from "../screens/profile/Social";
@@ -7,6 +9,11 @@ import DailySpin from "../screens/play/DailySpin";
 import Leaderboard from "../screens/learn/Leaderboard";
 import IntroQuiz from "../screens/learn/IntroQuiz";
 import SavingsLessons from "../screens/learn/SavingsLessons";
+import Article from "../screens/learn/Article";
+import Flashcards from "../screens/learn/Flashcards";
+
+import { AntDesign } from '@expo/vector-icons'; 
+
 
 const Stack = createStackNavigator();
 
@@ -23,7 +30,11 @@ const LearningStack = () => (
         <Stack.Screen name="Daily Spin" component={DailySpin} />
         <Stack.Screen name="Leaderboard" component={Leaderboard} />
         <Stack.Screen name="Intro Quiz" component={IntroQuiz} />
-        <Stack.Screen name="Savings Lessons" component={SavingsLessons} />
+        <Stack.Screen name="Savings Lessons" component={SavingsLessons}/>
+        <Stack.Screen name="Article" component={Article}/>
+        <Stack.Screen name="Flashcards" component={Flashcards} options={{
+            headerRight: () => <Text style={{color:"white",fontSize:20,fontWeight:"500",marginRight:32}}>1/25</Text>
+        }}/>
     </Stack.Navigator>
 );
 

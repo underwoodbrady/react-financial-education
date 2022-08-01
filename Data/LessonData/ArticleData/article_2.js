@@ -1,6 +1,6 @@
-const article1 = {
+const article2 = {
     title: "How the wind blows",
     content: "BlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlowBlow",
 };
 
-export default article1;
+export default article2;
