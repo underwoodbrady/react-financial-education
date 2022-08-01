@@ -10,6 +10,7 @@ const Flashcard = ({ frontText, backText, onPressRight, onPressLeft, disableLeft
             style={({ pressed }) => [
                 styles.container,
                 pressed && styles.containerPressed,
+                flipped && styles.containerFlipped,
             ]}
             onPress={() => setFlipped(!flipped)}>
             <View style={styles.header}>
@@ -60,6 +61,8 @@ const styles = StyleSheet.create({
         height: "100%",
     },
     containerPressed: {
+    },
+    containerFlipped: {
         backgroundColor: "#122533",
     },
     header: {
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         color: "white",
         fontWeight: "500",
-        paddingHorizontal: 16,
+        paddingHorizontal: 24,
     },
     mainTextFlipped: {
         fontSize: 22,

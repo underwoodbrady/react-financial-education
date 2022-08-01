@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
         width: "100%",
         alignItems: "center",
         paddingVertical: 52,
-        borderBottomRightRadius: 40,
-        borderBottomLeftRadius: 40,
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 20,
     },
     contentContainer: {
         alignItems: "center",

@@ -34,7 +34,7 @@ const Play = () => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <GameHeaderButton text="Leaderboards" color="#6F63FF"/>
-                <GameHeaderButton text="Daily Trivia" color="#FF9263"/>
+                <GameHeaderButton text="Daily Trivia" color="#FF9263" onPress={() => nav.navigate("Daily Trivia")}/>
             </View>
             {gameData.map((game, i) => (
                 <View style={styles.gameTabContainer} key={game.title}>

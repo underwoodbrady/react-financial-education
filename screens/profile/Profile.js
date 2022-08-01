@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'flex-start',
+		paddingVertical:64,
 	},
 	profileCircleOutline: {
 		width: 150,
