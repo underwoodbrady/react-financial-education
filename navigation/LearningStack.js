@@ -11,6 +11,7 @@ import IntroQuiz from "../screens/learn/IntroQuiz";
 import SavingsLessons from "../screens/learn/SavingsLessons";
 import Article from "../screens/learn/Article";
 import Flashcards from "../screens/learn/Flashcards";
+import SavingsQuizOne from "../screens/learn/SavingsQuiz1";
 
 import { AntDesign } from '@expo/vector-icons'; 
 
@@ -32,6 +33,7 @@ const LearningStack = () => (
         <Stack.Screen name="Intro Quiz" component={IntroQuiz} />
         <Stack.Screen name="Savings Lessons" component={SavingsLessons}/>
         <Stack.Screen name="Article" component={Article}/>
+        <Stack.Screen name="Savings Quiz One" component={SavingsQuizOne}/>
         <Stack.Screen name="Flashcards" component={Flashcards} options={{
             headerRight: () => <Text style={{color:"white",fontSize:20,fontWeight:"500",marginRight:32}}>1/25</Text>
         }}/>

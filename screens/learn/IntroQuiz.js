@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import questions from '../../Data/IntroQuizData';
+//import questions from '../../Data/IntroQuizData';
 import { Button, Text, View, StyleSheet, Vibration } from 'react-native';
 import CustomText from '../../components/CustomText';
 import Svg, { Rect, Circle } from 'react-native-svg';
 import QuizHeader from '../../components/learn/QuizHeader';
 import QuizButton from '../../components/learn/QuizButton';
 import { AntDesign } from '@expo/vector-icons';
-//shuffle here maybe
 
-const Quiz = () => {
+const Quiz = ({questions}) => {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);

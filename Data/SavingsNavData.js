@@ -4,7 +4,7 @@ const SavingsData = [
         questionColor: "#1290DC",
         ButtonLinks: [
             { title: "Article", rootLink: "Learn", screenLink:"Article", data:"Data/LessonData/ArticleData/article_1" },
-            { title: "Quiz", rootLink: "Learn", screenLink:"Intro Quiz", data:"Data/LessonData/ArticleData/article_1"  },
+            { title: "Quiz", rootLink: "Learn", screenLink:"Savings Quiz One", data:"Data/LessonData/ArticleData/article_1"  },
             { title: "Matching Game", rootLink: "Play", screenLink:"Matching Game", data:"Data/LessonData/ArticleData/article_1"  },
             { title: "Resources We Like", rootLink: "Play", screenLink:"Matching Game", data:"Data/LessonData/ArticleData/article_1"  },
         ],
