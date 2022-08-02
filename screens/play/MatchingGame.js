@@ -7,6 +7,7 @@ import { Stopwatch, Timer } from 'react-native-stopwatch-timer';
 import arrayShuffle from 'array-shuffle';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { useNavigation } from '@react-navigation/native';
+import { AntDesign } from '@expo/vector-icons';
 
 const shuffleArray = (array) => {
 	for (var i = array.length - 1; i > 0; i--) {
@@ -59,14 +60,6 @@ const MatchingGame = () => {
 		setIsStopwatchStart(false);
 		setResetStopwatch(true);
 	};
-
-	const restartButton = () => {
-		return (
-			<Pressable style = {styles.buttons} onPress={()=>restartFunction()}>
-				<MaterialCommunityIcons name="restart" size={24} color="white" />
-			</Pressable>
-		)
-	}
 
 	const restartFunction = () => {
 		//we need to reset the time, score, click num
@@ -130,19 +123,20 @@ const MatchingGame = () => {
 			) : (
 				<View>
 					<View style={styles.container}>
+						<Pressable style = {styles.buttons} onPress={()=>restartFunction()}>
+							<AntDesign name="arrowleft" size={36} color="white" />
+						</Pressable>
 						<Stopwatch
 							laps
 							start={isStopwatchStart}
 							reset={resetStopwatch}
 							options={options} //styling
 							getTime={(time) => {
-								console.log(time);
+								//console.log(time);
 								setGameTime(time);
-							}}
+							}} 
 						/>
-						<Pressable style = {styles.buttons} onPress={()=>restartFunction()}>
-							<MaterialCommunityIcons name="restart" size={24} color="white" />
-						</Pressable>
+						
 						{matchingAnswers.map((matchingAnswers) => (
 							<View style={styles.buttonContainer}>
 								{!matchingAnswers.disabled ? (
@@ -161,12 +155,13 @@ const MatchingGame = () => {
 							</View>
 						))}
 					</View>
+					{/*}
 					<View>
 						<Text style={styles.text}>
 							currNumberMatch: {currNumberMatch} secondClick:{' '}
 							{secondClick} score: {score}
 						</Text>
-					</View>
+								</View> */}
 				</View>
 			)}
 		</View>
@@ -177,7 +172,8 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
 		flexWrap: 'wrap',
-		margin: 16,
+		margin: 12,
+		justifyContent: 'center',
 	},
 	buttonContainer: {
 		padding: 6,
@@ -196,6 +192,8 @@ const options = {
 	  borderRadius: 5,
 	  width: 200,
 	  alignItems: 'center',
+	  justifyContent: 'center',
+
 	},
 	text: {
 	  fontSize: 25,
