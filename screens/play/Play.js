@@ -1,8 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, Modal, Pressable } from "react-native";
 import CustomText from "../../components/CustomText";
 import GameTab from "../../components/play/GameTab";
 import GameHeaderButton from "../../components/play/GameHeaderButton";
+import { useState } from 'react';
+import LeaderboardModal from "../../components/play/LeaderboardModal";
 
 const gameData = [
     {
@@ -30,12 +32,14 @@ const gameData = [
 
 const Play = () => {
     const nav = useNavigation();
+    const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <GameHeaderButton text="Leaderboards" color="#6F63FF"/>
+                <GameHeaderButton text="Leaderboards" color="#6F63FF" onPress={() => setModalVisible(!modalVisible)}/>
                 <GameHeaderButton text="Daily Trivia" color="#FF9263" onPress={() => nav.navigate("Daily Trivia")}/>
             </View>
+            <LeaderboardModal modalVisible={modalVisible} onClose={()=> setModalVisible(!modalVisible)}></LeaderboardModal>
             {gameData.map((game, i) => (
                 <View style={styles.gameTabContainer} key={game.title}>
                     <GameTab
