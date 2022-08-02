@@ -4,9 +4,11 @@ import Information from "../../components/profile/Information";
 import LearningPreferences from "../../components/profile/LearningPreferences";
 
 import { Entypo, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-const ProfileNew = () => (
-    <View style={styles.container}>
+const ProfileNew = () => {
+    const nav = useNavigation()
+    return(<View style={styles.container}>
         <ScrollView
             style={styles.scrollContainer}
             contentContainerStyle={{
@@ -40,7 +42,7 @@ const ProfileNew = () => (
             <View style={styles.preferencesContainer}>
                 <Text style={styles.sectionTitle}>Preferences</Text>
                 <View style={styles.preferencesBox}>
-                    <LearningPreferences />
+                    <LearningPreferences onPressButton={() => nav.navigate("Preferences")}/>
                 </View>
             </View>
 
@@ -56,8 +58,8 @@ const ProfileNew = () => (
                 </View>
             </View>
         </ScrollView>
-    </View>
-);
+    </View>);
+}
 
 const styles = StyleSheet.create({
     container: {

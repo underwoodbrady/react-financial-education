@@ -1,6 +1,6 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Pressable} from "react-native";
 
-const LearningPreferences = () => (
+const LearningPreferences = ({onPressButton}) => (
     <View style={styles.container}>
         <View style={styles.headerContainer}>
             <Image source={require("../../assets/graduation-cap.png")} style={{width:60, height:60}}/>
@@ -12,9 +12,9 @@ const LearningPreferences = () => (
                 </Text>
             </View>
         </View>
-        <View style={styles.button}>
+        <Pressable style={styles.button} onPress={onPressButton}>
             <Text style={styles.buttonText}>Update Learning Preferences</Text>
-        </View>
+        </Pressable>
     </View>
 );
 
