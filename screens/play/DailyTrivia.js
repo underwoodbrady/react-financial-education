@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const DailyTrivia = () => {
     let [gameActive, setGameActive] = useState(false);
     let [timeLeft, setTimeLeft] = useState(3);
+    let textCycle = ["Go!", "Get Set!", "Get Ready!"];
     useEffect(()=>{
         let interval = setTimeout(()=>{
             if(gameActive) return;
@@ -18,7 +19,7 @@ const DailyTrivia = () => {
     return (
         <View style={styles.container}>
             {!gameActive && <View style={styles.countdownContainer}>
-                <Text style={styles.warningText}>Get Ready!</Text>
+                <Text style={styles.warningText}>{textCycle[Math.ceil(timeLeft)-1]}</Text>
                 <View style={styles.clock}>
                     <View style={[styles.topHand, {transform: [{translateX:0}, {translateY:12}, {rotate:(timeLeft)/3 * 360 + "deg"},{translateX:0}, {translateY:-12}]}]}></View>
                 </View>

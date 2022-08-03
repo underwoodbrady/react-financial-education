@@ -1,0 +1,62 @@
+import { Text, View, StyleSheet, Pressable, Modal } from 'react-native';
+
+
+const PopupCenterModal = ({ label, subLabel, buttonText, modalVisible, onRequestClose }) => (
+    <View>
+        <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => onRequestClose}
+        >
+            <View style={styles.centeredView}>
+                <View style={styles.modalContainer}>
+                    <Text style={styles.labelText}>{label}</Text>
+                    <Text style={styles.subLabelText}>{subLabel}</Text>
+                    <Pressable onPress={onRequestClose} style={styles.closeButton}>
+                        <Text style={styles.buttonText}>{buttonText}</Text>
+                    </Pressable>
+                </View>
+            </View>
+        </Modal>
+    </View>
+);
+
+const styles = StyleSheet.create({
+	container: {
+   
+	},
+    centeredView: {
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center",
+        position:"absolute",
+        zIndex:5,
+        top:0,
+        left:0,
+        right:0,
+        bottom:0,
+        backgroundColor:"rgba(0,0,0,0.2)",
+    },
+    modalContainer:{
+        backgroundColor: "#324A60",
+        borderRadius: 15,
+        padding: 24,
+        width:280,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+    labelText:{
+        color:"white",
+        fontSize:16,
+        fontWeight:"700",
+    },
+});
+
+export default PopupCenterModal;
