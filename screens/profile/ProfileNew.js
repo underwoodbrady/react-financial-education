@@ -19,8 +19,8 @@ const ProfileNew = () => {
             <View style={styles.headerContainer}>
                 <View style={styles.topHeaderContainer}>
                     <View>
-                        <Text style={styles.nameText}>Brady Underwood</Text>
-                        <Text style={styles.usernameText}>brady.underwood</Text>
+                        <Text style={styles.nameText}>Bill Crager</Text>
+                        <Text style={styles.usernameText}>bill.crager</Text>
                         <Text style={styles.friendsText}>2 friends</Text>
                     </View>
                     <View>
