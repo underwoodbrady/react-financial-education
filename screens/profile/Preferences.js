@@ -70,7 +70,7 @@ const Preferences = () => {
                     />
                 </View>
             </View>
-            <Pressable style={styles.button} onPress={() => nav.goBack()}>
+            <Pressable style={styles.button} onPress={() => nav.navigate("ProfileScreen", {showModal:true})}>
                 <Text style={styles.buttonText}>
                     Update Learning Preferences
                 </Text>
