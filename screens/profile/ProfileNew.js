@@ -86,7 +86,7 @@ const ProfileNew = ({ route }) => {
                     <View style={styles.informationBox}>
                         <View style={styles.informationSpacing}>
                             <Information
-                                label="brady.underwood"
+                                label="bill.crager@envestnet.com"
                                 sublabel="Email"
                             />
                         </View>
