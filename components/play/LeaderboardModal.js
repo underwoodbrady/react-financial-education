@@ -56,6 +56,7 @@ const LeaderboardModal = ({ modalVisible, onClose }) => (
                         color="#198793"
                         text="Austin"
                         xp="88"
+                        crown
                     />
                     <LeaderboardTab
                         i={2}
@@ -82,7 +83,7 @@ const LeaderboardModal = ({ modalVisible, onClose }) => (
                         xp="21"
                     />
                     <LeaderboardTab
-                        i={14}
+                        i={9}
                         color="#1290DC"
                         text="You"
                         xp="2"

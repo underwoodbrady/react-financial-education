@@ -1,18 +1,36 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 
-const Tool = ({ text, color, showImage }) => (
-    <View style={styles.container}>
-        <View style={[styles.box, color && { backgroundColor: color }]}>
-            {showImage && (
-                <Image
-                    source={require("../../assets/calculator.png")}
-                    style={styles.image}
-                />
-            )}
+const Tool = ({ text, color, showImage }) => {
+    let imgSource;
+    switch (text) {
+        case "Budget Calculator":
+            imgSource = require("../../assets/calculator.png");
+            break;
+        case "Investing Calculator":
+            imgSource = require("../../assets/calculator-2.png");
+            break;
+        case "Interest Rate":
+            imgSource = require("../../assets/credit-card.png");
+            break;
+        default:
+            imgSource = require("../../assets/calculator.png");
+            break;
+    }
+
+    return (
+        <View style={styles.container}>
+            <View style={[styles.box, color && { backgroundColor: color }]}>
+                {showImage && (
+                    <Image
+                        source={imgSource}
+                        style={styles.image}
+                    />
+                )}
+            </View>
+            <Text style={styles.text}>{text}</Text>
         </View>
-        <Text style={styles.text}>{text}</Text>
-    </View>
-);
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -24,8 +42,8 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: "#324A60",
         marginBottom: 12,
-        alignItems:"center",
-        justifyContent:"center",
+        alignItems: "center",
+        justifyContent: "center",
     },
     image: {
         width: 28,
@@ -34,7 +52,7 @@ const styles = StyleSheet.create({
     text: {
         color: "#D4DFEA",
         textAlign: "center",
-        fontWeight:"500",
+        fontWeight: "500",
         lineHeight: 19,
     },
 });

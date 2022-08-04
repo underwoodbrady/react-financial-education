@@ -2,13 +2,15 @@ import { StyleSheet, View, Text } from "react-native";
 
 import Tool from "../../../components/tools/Tool";
 
+import HeaderText from "../../../components/text/HeaderText";
+
 const Toolkit = () => (
     <View style={styles.container}>
-        <Text style={styles.headerText}>Toolkit</Text>
+        <HeaderText text="Toolkit" style={{marginBottom:4}}/>
         <View style={styles.toolRow}>
             <Tool text="Budget Calculator" color="#BD4A41" showImage />
-            <Tool text="Investing Calculator" color="#1290DC" />
-            <Tool text="Tool name" />
+            <Tool text="Investing Calculator" color="#1290DC" showImage/>
+            <Tool text="Interest Rate" color="#198793" showImage/>
             <Tool text="Tool name" />
         </View>
     </View>

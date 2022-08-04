@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         flexDirection: "row",
         flex: 1,
+        justifyContent:"center",
     },
     buttonContainer: {
         padding: 6,

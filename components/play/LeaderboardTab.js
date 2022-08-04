@@ -1,10 +1,12 @@
 import { Text, View, StyleSheet, ImageBackgroundComponent } from "react-native";
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
-const LeaderboardTab = ({i, color, text, xp, special}) => (
+
+const LeaderboardTab = ({i, color, text, xp, special, crown}) => (
     <View style={[styles.container, special && {backgroundColor:"#69ABE6", marginTop:16}]}>
         <Text style={[styles.number, special && {color:"white"}]}>{i}</Text>
         <View style={[styles.icon, {backgroundColor:color}]}></View>
-        <Text style={styles.text}>{text}</Text>
+        <Text style={styles.text}>{text}{"   "}{crown && <FontAwesome5 name="crown" size={20} color="#FFE563" style={styles.crown} />}</Text>
         <Text style={styles.xp}>{xp}xp</Text>
     </View>
 );
@@ -13,7 +15,7 @@ const styles = StyleSheet.create({
     container:{
         flexDirection:"row",
         justifyContent:"space-between",
-        alignItems:"center",
+        alignItems:"flex-start",
         width:"100%",
         padding:8,
         paddingHorizontal:12,
@@ -41,6 +43,8 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         flexGrow:1,
         marginLeft:16,
+    },
+    crown:{
     },
     xp:{
         color: "#D4DFEA",

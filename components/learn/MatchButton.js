@@ -35,8 +35,10 @@ const styles = StyleSheet.create({
 		borderRadius: 16,
 		padding: 16,
         //flexDirection: 'wrap',
-        width: 110,
-        height:75,
+        width: 170,
+        height:90,
+        alignItems:"center",
+        justifyContent:"center",
     },
     text:{
         textAlign: "center",

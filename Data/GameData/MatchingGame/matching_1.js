@@ -1,4 +1,4 @@
-const SavingsMatchingOneAnswers = [
+const matchingAnswers = [
     {
         number: 1,
         value: "hi",
@@ -22,26 +22,6 @@ const SavingsMatchingOneAnswers = [
     {
         number: 5,
         value: "yo",
-        disabled: 0,
-    },
-    {
-        number: 6,
-        value: "konichiwa",
-        disabled: 0,
-    },
-    {
-        number: 7,
-        value: "ciao",
-        disabled: 0,
-    },
-    {
-        number: 8,
-        value: "guten tag",
-        disabled: 0,
-    },
-    {
-        number: 9,
-        value: "nin hao",
         disabled: 0,
     },
     {
@@ -69,26 +49,6 @@ const SavingsMatchingOneAnswers = [
         value: "slang",
         disabled: 0,
     },
-    {
-        number: 6,
-        value: "japanese",
-        disabled: 0,
-    },
-    {
-        number: 7,
-        value: "italian",
-        disabled: 0,
-    },
-    {
-        number: 8,
-        value: "german",
-        disabled: 0,
-    },
-    {
-        number: 9,
-        value: "chinese",
-        disabled: 0,
-    },
 ];
 
-export default SavingsMatchingOneAnswers;
+export default matchingAnswers;
