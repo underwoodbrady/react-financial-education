@@ -9,6 +9,8 @@ import Toolkit from "./ToolsTabs/Toolkit";
 
 import ToolsHeader from "../../components/tools/ToolsHeader";
 
+import Resources from "./ToolsTabs/Resources";
+
 /**
  * Tools header
  * 	-Small button
@@ -33,13 +35,14 @@ const Tools = () => {
         <View style={styles.container}>
             <View style={[styles.headerSpacing, selectedTab === 1 && {backgroundColor:"#4099F2"}]}>
                 <ToolsHeader
-                    tabs={["Toolkit", "Investing", "Saving"]}
+                    tabs={["Toolkit", "Investing", "Resources"]}
                     selectedTab={selectedTab}
                     setSelectedTab={(tab) => setSelectedTab(tab)}
                 />
             </View>
             {selectedTab === 0 && <Toolkit/>}
             {selectedTab === 1 &&<Investments />}
+            {selectedTab === 2 && <Resources />}
         </View>
     );
 };
