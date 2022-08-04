@@ -1,6 +1,6 @@
 import { Text, View, Image, StyleSheet, Pressable } from 'react-native';
 
-const MatchButton = ({text = "ButtonText", link, onPress, disabledHere = false, definition}) => (
+const MatchButton = ({text = "ButtonText", link, onPress, disabledHere = false, term}) => (
 
     <Pressable style={({ pressed }) => [
         {
@@ -23,7 +23,7 @@ const MatchButton = ({text = "ButtonText", link, onPress, disabledHere = false, 
                 : '#B6C5D4'
             },
             styles.text,
-            definition && {fontSize:20, color:"white"}
+            term && {fontSize:20, color:"white"}
         ]}> {text}
         </Text>
 	</Pressable>

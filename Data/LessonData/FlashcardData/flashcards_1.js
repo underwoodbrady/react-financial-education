@@ -1,27 +1,27 @@
 const flashcardsData =[
     {
-        Term: "What is budgetting?",
+        Term: "Roth IRA",
+        Definition: "Individual retirement account allowing a person to set aside after-tax income up to a specified amount each year",
+    },
+    {
+        Term: "Certificate of Deposit",
+        Definition: "Bank product that earns interest on lump sum",
+    },
+    {
+        Term: "Principal Amount",
+        Definition: "Original amount saved or invested",
+    },
+    {
+        Term: "Simple interest",
         Definition: "Limiting spending categorically in order to reach a specific goal",
     },
     {
-        Term: "What is saving?",
-        Definition: "Something to do with banks and investing idk",
+        Term: "Savings",
+        Definition: "Part of income not spent on consumption",
     },
     {
-        Term: "What is 9+10?",
-        Definition: "21",
-    },
-    {
-        Term: "What is budgetting?",
-        Definition: "Limiting spending categorically in order to reach a specific goal",
-    },
-    {
-        Term: "What is saving?",
-        Definition: "Something to do with banks and investing idk",
-    },
-    {
-        Term: "What is 9+10?",
-        Definition: "21",
+        Term: "Compound interest",
+        Definition: "Earning interest on top of interest",
     },
 ];
 

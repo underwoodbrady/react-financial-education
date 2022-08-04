@@ -11,8 +11,8 @@ const SavingsQuizOneQuestions = [
     {
       questionText: "At age 60, you'll want to purchase Long-Term Care Insurance (LLC)",
       answerOptions: [
-        { answerText: 'True', isCorrect: false },
-        { answerText: 'False', isCorrect: true },
+        { answerText: 'True', isCorrect: true },
+        { answerText: 'False', isCorrect: false },
       ],
     },
     {
@@ -25,7 +25,7 @@ const SavingsQuizOneQuestions = [
       ],
     },
     {
-      questionText: 'How many people work at Envestnet?',
+      questionText: 'Which of the following is a type of Retirement Account? ',
       answerOptions: [
         { answerText: '401k', isCorrect: false },
         { answerText: 'Roth IRA', isCorrect: false },

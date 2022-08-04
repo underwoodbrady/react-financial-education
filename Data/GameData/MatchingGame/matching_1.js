@@ -2,31 +2,31 @@ const matchingAnswers = [
     {
         number: 1,
         value: "401K",
-        definition: true,
+        term: true,
         disabled: 0,
     },
     {
         number: 2,
         value: "Emergency Fund",
-        definition: true,
+        term: true,
         disabled: 0,
     },
     {
         number: 3,
         value: "Inflation",
-        definition: true,
+        term: true,
         disabled: 0,
     },
     {
         number: 4,
         value: "Impulse Buying",
-        definition: true,
+        term: true,
         disabled: 0,
     },
     {
         number: 5,
         value: "Wealth",
-        definition: true,
+        term: true,
         disabled: 0,
     },
     {
