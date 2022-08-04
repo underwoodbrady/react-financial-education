@@ -1,52 +1,57 @@
 const matchingAnswers = [
     {
         number: 1,
-        value: "hi",
+        value: "401K",
+        definition: true,
         disabled: 0,
     },
     {
         number: 2,
-        value: "hola",
+        value: "Emergency Fund",
+        definition: true,
         disabled: 0,
     },
     {
         number: 3,
-        value: "bonjour",
+        value: "Inflation",
+        definition: true,
         disabled: 0,
     },
     {
         number: 4,
-        value: "shalom",
+        value: "Impulse Buying",
+        definition: true,
         disabled: 0,
     },
     {
         number: 5,
-        value: "yo",
+        value: "Wealth",
+        definition: true,
         disabled: 0,
     },
     {
         number: 1,
-        value: "english",
+        value: "retirement savings plan sponsored by an employer",
         disabled: 0,
     },
     {
         number: 2,
-        value: "spanish",
+        value: "Fund for loss of income",
         disabled: 0,
     },
     {
         number: 3,
-        value: "french",
+        value: "Rate of decreasing purchase power",
         disabled: 0,
     },
     {
         number: 4,
-        value: "hebrew",
+        value: "The act of unplanned spending",
         disabled: 0,
     },
     {
         number: 5,
-        value: "slang",
+        value: "Assets minus liabilities",
         disabled: 0,
     },
 ];

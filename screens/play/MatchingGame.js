@@ -157,6 +157,7 @@ const MatchingGame = ({ matchingAnswers = defaultAnswers }) => {
                                     {!matchingAnswers.disabled ? (
                                         <MatchButton
                                             text={matchingAnswers.value}
+                                            definition={matchingAnswers.definition}
                                             onPress={() =>
                                                 buttonClicked(matchingAnswers)
                                             }
