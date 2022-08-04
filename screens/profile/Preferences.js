@@ -60,13 +60,19 @@ const Preferences = () => {
                 <View style={styles.spaceCheckbox}>
                     <TopicCheckbox
                         icon="piggy-bank"
-                        label="Budgetting/Saving"
+                        label="Retirement Planning"
                     />
                 </View>
                 <View style={styles.spaceCheckbox}>
                     <TopicCheckbox
                         icon="shield-alt"
                         label="Personal Security"
+                    />
+                </View>
+                <View style={styles.spaceCheckbox}>
+                    <TopicCheckbox
+                        icon="tree"
+                        label="ESG (Investing for good)"
                     />
                 </View>
             </View>

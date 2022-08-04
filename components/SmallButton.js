@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
     container: {
         borderRadius: 12,
         borderWidth: 3,
-        borderColor: "#D4DFEA",
+        borderColor: "#324A60",
         paddingVertical: 8,
         paddingHorizontal: 12,
     },
     isSelected: {
-        backgroundColor:"white",
-        borderColor:"white",
+        backgroundColor:"#324A60",
+        borderColor:"#324A60",
     },
     title:{
         color:"#D4DFEA",
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         fontSize:13,
     },
     isSelectedText:{
-        color:"#01101B",
+        color:"white",
     }
 });
 
