@@ -30,16 +30,13 @@ const MatchButton = ({text = "ButtonText", link, onPress, disabledHere = false})
 
 const styles = StyleSheet.create({
 	container:{
-        borderWidth: 2,
+        borderWidth: 3,
 		//borderColor: '#324A60',
 		borderRadius: 16,
 		padding: 16,
         //flexDirection: 'wrap',
         width: 110,
         height:75,
-    },
-    buttonContainer: {
-        flexDirection: 'row'
     },
     text:{
         textAlign: "center",
