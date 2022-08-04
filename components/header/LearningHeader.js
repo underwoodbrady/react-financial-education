@@ -10,7 +10,7 @@ const LearningHeader = () => (
 				size={20}
 				color="#FFE563"
 			/>
-			<Text style={styles.text}>69</Text>
+			<Text style={styles.text}>32</Text>
 		</View>
 		<View style={styles.subContainer}>
 			<FontAwesome5

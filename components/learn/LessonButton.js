@@ -5,7 +5,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 const LessonButton = ({ text = "ButtonText", onPress, checked }) => {
     let icon;
     switch (text) {
-        case "Article":
+        case "Content":
             icon = <FontAwesome5 name="newspaper" size={20} color="white" />;
             break;
         case "Quiz":

@@ -22,7 +22,7 @@ const gameData = [
         percentComplete: "80%",
     },
     {
-        title: "Astroids Game",
+        title: "Asteroids Game",
         description: "Shoot em",
         icon: "rocket",
         color: "#DF8EEB",
