@@ -14,6 +14,10 @@ const house = require("../../assets/home.png");
 const health = require("../../assets/health.png");
 const money = require("../../assets/money.png");
 const cardGraph = require("../../assets/card-graph.png");
+const treeEsg = require("../../assets/tree-esg.png");
+const donate = require("../../assets/donate.png");
+const logs = require("../../assets/logs.png");
+const report = require("../../assets/report.png");
 //const currSavingQuiz = "Intro Quiz";
 
 const Learn = () => {
@@ -43,9 +47,9 @@ const Learn = () => {
             />
             <View style={{ marginTop: 58, marginBottom: 32 }}>
                 <LearnPathHeader
-                    text="Unit 1"
+                    text="Basics"
                     currentComplete={4}
-                    goalComplete={10}
+                    goalComplete={5}
                 />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
@@ -63,9 +67,9 @@ const Learn = () => {
                     flexDirection: "row",
                 }}>
                 <View style={{ marginRight: 36 }}>
-                    <LearnPathNode text="Long Term" image={health} />
+                    <LearnPathNode text="Health" image={health} />
                 </View>
-                <LearnPathNode text="Short Term" image={house} />
+                <LearnPathNode text="Home" image={house} />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
                 <LearnPathNode text="Inflation" image={money} />
@@ -79,13 +83,13 @@ const Learn = () => {
             </View>
             <View style={{ marginTop: 100, marginBottom: 32 }}>
                 <LearnPathHeader
-                    text="Unit 2"
-                    currentComplete={4}
-                    goalComplete={10}
+                    text="Personal"
+                    currentComplete={0}
+                    goalComplete={5}
                 />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
-                <LearnPathNode text="Saving" image={banks} disabled />
+                <LearnPathNode text="ESG" image={treeEsg} disabled />
             </View>
             <View
                 style={{
@@ -94,12 +98,12 @@ const Learn = () => {
                     flexDirection: "row",
                 }}>
                 <View style={{ marginRight: 36 }}>
-                    <LearnPathNode text="Long Term" image={health} disabled />
+                    <LearnPathNode text="Donations" image={donate} disabled />
                 </View>
-                <LearnPathNode text="Short Long" image={house} disabled />
+                <LearnPathNode text="Renewables" image={logs} disabled />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
-                <LearnPathNode text="Inflation" image={money} disabled />
+                <LearnPathNode text="Reports" image={report} disabled />
             </View>
             <View style={{ marginTop: 12, marginBottom: 12 }}>
                 <LearnPathNode

@@ -1,4 +1,5 @@
-import { Text, View, StyleSheet, Pressable, Modal } from 'react-native';
+import { Text, View, StyleSheet, Pressable, Modal, Image } from 'react-native';
+const lydianLogo = require("../../assets/lydian-logo.png");
 
 
 const PopupCenterModal = ({ label, subLabel, buttonText, modalVisible, onRequestClose }) => (
@@ -16,6 +17,10 @@ const PopupCenterModal = ({ label, subLabel, buttonText, modalVisible, onRequest
                     <Pressable onPress={onRequestClose} style={styles.closeButton}>
                         <Text style={styles.buttonText}>{buttonText}</Text>
                     </Pressable>
+                    {/*<Image
+					style={styles.iconImage}
+					source={lydianLogo}
+/>*/}
                 </View>
             </View>
         </Modal>

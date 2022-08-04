@@ -13,7 +13,7 @@ const LearnPathHeader = ({image, text, currentComplete, goalComplete}) => (
 		</View>
 		<View style={styles.footer}>
 			<View style={styles.progressBar}>
-				<View style={styles.progressBarFull}></View>
+				<View style={[styles.progressBarFull, {width: currentComplete/goalComplete * 100 + "%"}]}></View>
 				<Image
 					style={styles.progressBarImage}
 					source={require('../../assets/coin.png')}

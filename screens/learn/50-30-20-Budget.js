@@ -19,7 +19,7 @@ const FiftyThirtyTwentyBudgeting = () => {
                 <HeaderText text="Helpful tips:" style={{ marginBottom: 12 }} />
                 <ListText
                     listNum={1}
-                    text="Be careful not to miscategorize wants as needs. Remember, needs are you basic living expenses, things necessary for your health, or expenses that are required for you to do your job. Wants, on the other hand, are things you choose to buy but could live without."
+                    text="Be careful not to miscategorize wants as needs. Remember, needs are your basic living expenses, things necessary for your health, or expenses that are required for you to do your job. Wants, on the other hand, are things you choose to buy but could live without."
                 />
                 <ListText
                     listNum={2}
