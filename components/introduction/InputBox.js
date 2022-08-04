@@ -12,6 +12,7 @@ const InputBox = ({placeholder, secureTextEntry}) => {
                 placeholder={placeholder}
                 placeholderTextColor={"#B6C5D4"}
                 secureTextEntry={secureTextEntry}
+                autoCapitalize="none"
             />
         </View>
     );
