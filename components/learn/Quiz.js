@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 //shuffle here maybe
 
-const Quiz = ({ questions }) => {
+const Quiz = ({ questions, onGoBack }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
@@ -19,8 +19,6 @@ const Quiz = ({ questions }) => {
     const [incorrectTwo, setIncorrectTwo] = useState(0);
     const [visitedOne, setVisitedOne] = useState(0);
     const [visitedTwo, setVisitedTwo] = useState(0);
-
-    const nav = useNavigation();
 
     //below is where we can add animations for correct/incorrect answers etc
     const handleAnswerButtonClick = (isCorrect) => {
@@ -161,7 +159,7 @@ const Quiz = ({ questions }) => {
                         You scored {score + 1} out of {questions.length}
                     </Text>
                     <Pressable
-                        onPress={() => nav.goBack()}
+                        onPress={onGoBack}
                         style={styles.goBackButton}>
                         <Text style={styles.goBackButtonText}>Go Back</Text>
                     </Pressable>

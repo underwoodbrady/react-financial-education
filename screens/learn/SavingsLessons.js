@@ -5,16 +5,31 @@ import CustomText from "../../components/CustomText";
 import SavingsData from "../../Data/SavingsNavData";
 import { useNavigation } from "@react-navigation/native";
 import QuizButton from "../../components/learn/QuizButton";
-import Quiz from "./IntroQuiz";
 import { FontAwesome } from "@expo/vector-icons";
 
 import LessonButton from "../../components/learn/LessonButton";
 
+import { useSelector } from 'react-redux';
+import { useEffect } from "react";
+
+
 const SavingsLessons = () => {
     const nav = useNavigation();
     const [currLesson, setCurrLesson] = useState(0);
+    const [lessonsComplete, setLessonsComplete] = useState(0);
     const [forwardActive, changeForwardActive] = useState(true);
     const [backwardActive, changeBackwardActive] = useState(false);
+
+    const { lessonCompletion } = useSelector((state) => state.globalReducer);
+
+    useEffect(()=>{
+        let complete = 0;
+        lessonCompletion[currLesson].forEach(e => {
+            if(e)
+                complete++
+        });
+        setLessonsComplete(complete);
+    },[currLesson, lessonCompletion])
 
     const Next = () => {
         //updates currLesson, TODO: don't let it go forward if currLesson + 1 == SavingsData.length
@@ -86,7 +101,7 @@ const SavingsLessons = () => {
                         {SavingsData[currLesson].questionText}
                     </Text>
                     <Text style={styles.subHeaderText}>
-                        Objectives Complete: 1/3
+                        Objectives Complete: {lessonsComplete}/{SavingsData[currLesson].ButtonLinks.length}
                     </Text>
                 </View>
                 {SavingsData[currLesson].ButtonLinks.map((ButtonLinks, i) => (
@@ -105,7 +120,7 @@ const SavingsLessons = () => {
                                     },
                                 })
                             }
-                            checked={i === 0}
+                            checked={lessonCompletion[currLesson][i]}
                         />
                     </View>
                 ))}

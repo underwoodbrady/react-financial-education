@@ -22,7 +22,7 @@ const shuffleArray = (array) => {
     }
 };
 
-const MatchingGame = ({ matchingAnswers = defaultAnswers }) => {
+const MatchingGame = ({ matchingAnswers = defaultAnswers, onStartGame}) => {
     const nav = useNavigation();
     const [currMatchSelected, setCurrMatchSelected] = useState(0);
     const [secondClick, setSecondClick] = useState(0); //will be 0 if first click, 1 if second click
@@ -129,7 +129,10 @@ const MatchingGame = ({ matchingAnswers = defaultAnswers }) => {
                             <Text style={styles.text}>{gameTime}</Text>
                         )}
                         <Pressable
-                            onPress={() => startGame()}
+                            onPress={() => {
+                                onStartGame();
+                                startGame()
+                            }}
                             style={styles.startButton}>
                             <Text style={styles.startText}>Start</Text>
                         </Pressable>

@@ -7,7 +7,7 @@ const LeaderboardTab = ({i, color, text, xp, special, crown}) => (
         <Text style={[styles.number, special && {color:"white"}]}>{i}</Text>
         <View style={[styles.icon, {backgroundColor:color}]}></View>
         <Text style={styles.text}>{text}{"   "}{crown && <FontAwesome5 name="crown" size={20} color="#FFE563" style={styles.crown} />}</Text>
-        <Text style={styles.xp}>{xp}xp</Text>
+        <Text style={styles.xp}>{xp} coins</Text>
     </View>
 );
 

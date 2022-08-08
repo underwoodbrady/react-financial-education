@@ -8,11 +8,10 @@ import SubheaderText from '../../components/text/SubheaderText';
 import ParagraphText from '../../components/text/ParagraphText';
 import ListText from '../../components/text/ListText';
 
-const Article = ({ children }) => {
+const Article = ({ children, onPressContinue }) => {
 	const [scrollPos, setScrollPos] = useState(1);
 	const [viewHeight, setViewHeight] = useState(100);
 	const [offset, setOffset] = useState(0);
-	const nav = useNavigation();
 	return (
 		<View style={styles.container}>
 			<View
@@ -32,7 +31,7 @@ const Article = ({ children }) => {
 					scrollPos / (viewHeight - offset) > 0.9 && { opacity: 1 },
 				]}
 			>
-				<ButtonPrimary text="Continue" onPress={() => nav.goBack()} />
+				<ButtonPrimary text="Continue" onPress={onPressContinue} />
 			</View>
 
 			<ScrollView

@@ -7,7 +7,6 @@ import Course from "../screens/learn/Course";
 import Social from "../screens/profile/Social";
 import DailySpin from "../screens/play/DailySpin";
 import Leaderboard from "../screens/learn/Leaderboard";
-import IntroQuiz from "../screens/learn/IntroQuiz";
 import SavingsLessons from "../screens/learn/SavingsLessons";
 import Article from "../screens/learn/Article";
 import Flashcards from "../screens/learn/Flashcards";
@@ -34,7 +33,6 @@ const LearningStack = () => (
         <Stack.Screen name="Social" component={Social} />
         <Stack.Screen name="Daily Spin" component={DailySpin} />
         <Stack.Screen name="Leaderboard" component={Leaderboard} />
-        <Stack.Screen name="Intro Quiz" component={IntroQuiz} />
         <Stack.Screen name="Savings Lessons" component={SavingsLessons}/>
         <Stack.Screen name="Article" component={Article}/>
         <Stack.Screen name="Savings Quiz One" component={SavingsQuizOne}/>
