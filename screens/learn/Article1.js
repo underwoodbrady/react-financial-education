@@ -8,7 +8,7 @@ import ParagraphText from '../../components/text/ParagraphText';
 import ListText from '../../components/text/ListText';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { completedObjective } from '../../redux/actions';
+import { completedObjective, increaseCoins } from '../../redux/actions';
 
 const ArticleOne = () => {
 	const nav = useNavigation();
@@ -16,6 +16,7 @@ const ArticleOne = () => {
 	return (
 		<Article onPressContinue={() => {
 			dispatch(completedObjective(0,0));
+			dispatch(increaseCoins(2));
 			nav.goBack();
 		}}>
 			<HeaderText text="Budgeting: 50/30/20 Rule" />
