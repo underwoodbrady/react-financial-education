@@ -15,11 +15,11 @@ const growth = require("../../assets/growth.png"); // Agressive Growth
 const shield = require("../../assets/shield.png"); // Personal Security
 const bank = require("../../assets/bank.png"); // College Saving
 
-const help = require("../../assets/help.png"); 
+const question = require("../../assets/question.png"); 
 
 const LearnPathNode = ({
 	text,
-	image = help,
+	image = question,
 	color,
 	disabled = false,
 	onPress,
