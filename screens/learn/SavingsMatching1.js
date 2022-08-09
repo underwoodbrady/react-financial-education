@@ -3,6 +3,7 @@ import SavingsMatchingOneAnswers from '../../Data/GameData/MatchingGame/matching
 
 import { useDispatch } from 'react-redux';
 import { completedObjective } from '../../redux/actions';
+import { increaseCoins } from '../../redux/actions'; 
 
 const SavingsMatchingOne = () => {
     const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const SavingsMatchingOne = () => {
 			matchingAnswers={SavingsMatchingOneAnswers}
 			onStartGame={() => {
                 dispatch(completedObjective(0,2));
+                dispatch(increaseCoins);
             }}
 		/>
 	);
