@@ -11,7 +11,7 @@ const Toolkit = () => (
             <Tool text="Budget Calculator" color="#BD4A41" showImage />
             <Tool text="Investing Calculator" color="#1290DC" showImage/>
             <Tool text="Interest Rate" color="#198793" showImage/>
-            <Tool text="Tool name" />
+            <Tool text="Retire Planning" color="#D79C41" showImage/>
         </View>
     </View>
 );

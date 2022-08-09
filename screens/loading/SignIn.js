@@ -1,11 +1,33 @@
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, Keyboard } from "react-native";
 
 import InputBox from "../../components/introduction/InputBox";
 import ButtonPrimary from "../../components/ButtonPrimary";
 import { useNavigation } from "@react-navigation/native";
+import { useState, useEffect } from "react";
 
 const SignIn = () => {
 	const nav = useNavigation();
+    const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
+	useEffect(() => {
+		const keyboardDidShowListener = Keyboard.addListener(
+			'keyboardDidShow',
+			() => {
+				setKeyboardVisible(true); // or some other action
+			}
+		);
+		const keyboardDidHideListener = Keyboard.addListener(
+			'keyboardDidHide',
+			() => {
+				setKeyboardVisible(false); // or some other action
+			}
+		);
+		return () => {
+			keyboardDidHideListener.remove();
+			keyboardDidShowListener.remove();
+		};
+	}, []);
+
     return(<View style={styles.container}>
         <View style={styles.mainContent}>
             <Image
@@ -24,11 +46,11 @@ const SignIn = () => {
             </View>
             <Text style={styles.forgotPassword}>Forgot your password?</Text>
         </View>
-        <View style={styles.footerContent}>
+        {!isKeyboardVisible && <View style={styles.footerContent}>
             <Text style={styles.footerText}>Sign in as advisor</Text>
             <View style={styles.footerSeparator}/>
             <Text style={styles.footerText}>Sign in as employee</Text>
-        </View>
+        </View>}
     </View>)
 };
 

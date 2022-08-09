@@ -6,7 +6,16 @@ import ListText from "../../components/text/ListText";
 
 import BudgetTool from "../../components/learn/BudgetTool";
 
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { completedObjective } from "../../redux/actions";
+
 const FiftyThirtyTwentyBudgeting = () => {
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(completedObjective(1,2));
+    },[])
     return (
         <ScrollView>
             <View style={styles.container}>

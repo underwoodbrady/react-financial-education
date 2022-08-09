@@ -12,6 +12,9 @@ const Tool = ({ text, color, showImage }) => {
         case "Interest Rate":
             imgSource = require("../../assets/credit-card.png");
             break;
+        case "Retire Planning":
+            imgSource = require("../../assets/bed.png");
+            break;
         default:
             imgSource = require("../../assets/calculator.png");
             break;

@@ -3,11 +3,16 @@ import dailyTriviaData from "../../Data/DailyTriviaData";
 import Quiz from "../../components/learn/Quiz";
 
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
+import { increaseCoins } from "../../redux/actions";
 
 const DailyTrivia = () => {
     let [gameActive, setGameActive] = useState(false);
     let [timeLeft, setTimeLeft] = useState(3);
     let textCycle = ["Go!", "Get Set!", "Get Ready!"];
+    const dispatch = useDispatch();
+    const nav = useNavigation();
     useEffect(()=>{
         let interval = setTimeout(()=>{
             if(gameActive) return;
@@ -25,7 +30,10 @@ const DailyTrivia = () => {
                 </View>
                 <Text style={styles.countdownText}>{Math.ceil(timeLeft)} seconds</Text>
             </View>}
-            {gameActive && <Quiz questions={dailyTriviaData} />}
+            {gameActive && <Quiz questions={dailyTriviaData} onGoBack={()=>{
+                dispatch(increaseCoins(7));
+                nav.goBack();
+            }}/>}
         </View>
     );
 }

@@ -4,15 +4,19 @@ import CustomText from "../../components/CustomText";
 
 import Flashcard from "../../components/learn/Flashcard";
 import flashcardsData from "../../Data/LessonData/FlashcardData/flashcards_1";
+import { useDispatch } from "react-redux";
+import { completedObjective } from "../../redux/actions";
 
 const Flashcards = () => {
     let [card, setCard] = useState(0);
+    const dispatch = useDispatch();
     const handlePressLeft = () => {
         if(card<=0) return;
         setCard(card-=1);
     }
     const handlePressRight = () => {
         if(card>=(flashcardsData.length-1)) return;
+        if(card>=(flashcardsData.length-2)) dispatch(completedObjective(1,1));
         setCard(card+=1);
     }
     return (
