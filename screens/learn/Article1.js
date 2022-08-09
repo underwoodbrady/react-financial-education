@@ -9,16 +9,19 @@ import ListText from '../../components/text/ListText';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { completedObjective, increaseCoins } from '../../redux/actions';
+import ArticleImage from '../../components/learn/ArticleImage';
 
 const ArticleOne = () => {
 	const nav = useNavigation();
 	const dispatch = useDispatch();
+	const articleImage = require("../../assets/financialgoals.jpg");
 	return (
 		<Article onPressContinue={() => {
 			dispatch(completedObjective(0,0));
 			dispatch(increaseCoins(2));
 			nav.goBack();
 		}}>
+			<ArticleImage image={articleImage}/>
 			<HeaderText text="Budgeting: 50/30/20 Rule" />
 			<ParagraphText text="The recommended way to budget your money is by using the 50/30/20 rule. This means spending 50% of your income on needs, 30% on wants, and 20% is saved or used to repay debt. Some expenses that should be included in needs are housing, groceries, utilities, transportation, and insurance. Expenses that can be included in wants are entertainment, gifts, dining, and vacation." />
 			<SubheaderText text="The 20%" style={{ marginVertical: 8 }} />

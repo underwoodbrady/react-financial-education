@@ -6,6 +6,7 @@ import HeaderText from '../../components/text/HeaderText';
 import SubheaderText from '../../components/text/SubheaderText';
 import ParagraphText from '../../components/text/ParagraphText';
 import ListText from '../../components/text/ListText';
+import ArticleImage from '../../components/learn/ArticleImage';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { completedObjective, increaseCoins } from '../../redux/actions';
@@ -13,6 +14,7 @@ import { completedObjective, increaseCoins } from '../../redux/actions';
 const ArticleTwo = () => {
 	const nav = useNavigation();
 	const dispatch = useDispatch();
+	const articleImage = require("../../assets/collegeloans.jpg");
 	return (
 		<Article onPressContinue={() => {
 			dispatch(completedObjective(1,0));
@@ -21,6 +23,7 @@ const ArticleTwo = () => {
 		}}>
 			<HeaderText text="Saving: College Loans" />
 			<ParagraphText text="Students that are planning for college loans should be aware of the different options available to them. There are four federal options offered to students taking on college loans. The first option is Standard Repayment. This option allows students to repay over the course of 10 years with less interest. The second option is Income-driven Repayment. This ties your repayment amount to income as you pay a portion of your income over a 20 or 25 year span." />
+			<ArticleImage image={articleImage}/>
 			<SubheaderText
 				text="Graduated Repayment"
 				style={{ marginVertical: 8 }}
