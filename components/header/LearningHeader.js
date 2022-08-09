@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const LearningHeader = () => {
 	const {coins, streak} = useSelector((state)=> state.globalReducer);

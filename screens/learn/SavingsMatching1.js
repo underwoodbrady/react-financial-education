@@ -12,7 +12,7 @@ const SavingsMatchingOne = () => {
 			matchingAnswers={SavingsMatchingOneAnswers}
 			onStartGame={() => {
                 dispatch(completedObjective(0,2));
-                dispatch(increaseCoins);
+                dispatch(increaseCoins(3));
             }}
 		/>
 	);
