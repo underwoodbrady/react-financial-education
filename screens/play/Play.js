@@ -9,21 +9,21 @@ import LeaderboardModal from "../../components/play/LeaderboardModal";
 const gameData = [
     {
         title: "Matching Game",
-        description: "Game about matching stuff",
+        description: "Match terms with definitions",
         icon: "puzzle",
         color: "#FFA08E",
         percentComplete: "100%",
     },
     {
         title: "Ticker Guesser",
-        description: "Guess that ticker bro",
+        description: "Guess the ticker",
         icon: "format-letter-matches",
         color: "#ACDBFE",
         percentComplete: "80%",
     },
     {
         title: "Asteroids Game",
-        description: "Shoot em",
+        description: "Guess words quickly",
         icon: "rocket",
         color: "#DF8EEB",
         percentComplete: "40%",

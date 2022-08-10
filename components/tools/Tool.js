@@ -1,15 +1,15 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 
-const Tool = ({ text, color, showImage }) => {
+const Tool = ({ text, color, showImage, hideTool }) => {
     let imgSource;
     switch (text) {
         case "Budget Calculator":
             imgSource = require("../../assets/calculator.png");
             break;
-        case "Investing Calculator":
+        case "Invest Plan":
             imgSource = require("../../assets/calculator-2.png");
             break;
-        case "Interest Rate":
+        case "APR Calculator":
             imgSource = require("../../assets/credit-card.png");
             break;
         case "Retire Planning":
@@ -21,7 +21,7 @@ const Tool = ({ text, color, showImage }) => {
     }
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, hideTool && {opacity: 0}]}>
             <View style={[styles.box, color && { backgroundColor: color }]}>
                 {showImage && (
                     <Image

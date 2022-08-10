@@ -9,9 +9,15 @@ const Toolkit = () => (
         <HeaderText text="Toolkit" style={{marginBottom:4}}/>
         <View style={styles.toolRow}>
             <Tool text="Budget Calculator" color="#BD4A41" showImage />
-            <Tool text="Investing Calculator" color="#1290DC" showImage/>
-            <Tool text="Interest Rate" color="#198793" showImage/>
+            <Tool text="Invest Plan" color="#1290DC" showImage/>
+            <Tool text="APR Calculator" color="#198793" showImage/>
             <Tool text="Retire Planning" color="#D79C41" showImage/>
+        </View>
+        <View style={styles.toolRow}>
+            <Tool text="Inflation Calculator" color="#9F1DB2" showImage />
+            <Tool text="Tip Calculator" color="#3F50B1" showImage/>
+            <Tool text="Cost Tool" color="#4A4A4A" hideTool/>
+            <Tool text="" color="#3CB33D"  hideTool/>
         </View>
     </View>
 );
@@ -30,7 +36,8 @@ const styles = StyleSheet.create({
     toolRow: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginVertical: 16,
+        marginTop: 16,
+        marginBottom:8,
     },
 });
 

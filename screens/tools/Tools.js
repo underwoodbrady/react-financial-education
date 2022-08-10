@@ -11,21 +11,6 @@ import ToolsHeader from "../../components/tools/ToolsHeader";
 
 import Resources from "./ToolsTabs/Resources";
 
-/**
- * Tools header
- * 	-Small button
- * Tools content
- * 	-CashAmountChanged
- *	-GraphButton
- * 	-InfoPanel
- *
- * Recent Actions
- *
- * 	-Action
- *
- * Icon Button
- *
- */
 
 const Tools = () => {
     const nav = useNavigation();
