@@ -6,7 +6,7 @@ import LearnPathNode from '../../components/learn/LearnPathNode';
 
 import { useNavigation, useNavigationState } from '@react-navigation/native';
 import SavingsLessons from './SavingsLessons';
-import PopupCenterModal from '../../components/modal/PopupCenterModal';
+import PopupCenterModal from '../../components/modal/PopupCenterModalNew';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -35,7 +35,7 @@ const Learn = () => {
 			<PopupCenterModal
 				modalVisible={modalVisible}
 				onRequestClose={closeModal}
-				label="Welcome to your learning"
+				label="Welcome to your learning!"
 				subLabel="Click one of the lessons to get started"
 				buttonText="Let's go"
 			/>

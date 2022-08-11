@@ -7,7 +7,8 @@ const PopupCenterModal = ({
 	buttonText,
 	modalVisible,
 	onRequestClose,
-	image,
+	confetti,
+	image = require("../../assets/lydian.png"),
 }) => (
 	<View>
 		<Modal
@@ -17,18 +18,19 @@ const PopupCenterModal = ({
 			onRequestClose={() => onRequestClose}
 		>
 			<View style={styles.centeredView}>
-				<LottieView
+				{confetti && <LottieView
 					autoPlay
 					loop={false}
 					style={{
-						width: 450,
-						height: 450,
+						width: 600,
+						height: 600,
 						backgroundColor: 'transparent',
                         position:'absolute',
 					}}
 					source={require('../../assets/confetti.json')}
-				/>
+				/>}
 				<View style={styles.modalContainer}>
+					<Image source={image} style={styles.image} />
 					<Text style={styles.labelText}>{label}</Text>
 					<Text style={styles.subLabelText}>{subLabel}</Text>
 					<Pressable
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
 		backgroundColor: '#324A60',
 		borderRadius: 15,
 		padding: 24,
-		width: 280,
+		width: 300,
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 0,
@@ -74,24 +76,35 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.25,
 		shadowRadius: 4,
 		elevation: 5,
+		alignItems:"center",
+	},
+	image:{
+		width:100,
+		height:100,
+		marginBottom:8,
 	},
 	labelText: {
 		color: 'white',
-		fontSize: 20,
+		fontSize: 21,
 		fontWeight: '700',
 		marginBottom: 8,
+		textAlign:"center",
 	},
 	subLabelText: {
 		color: '#D4DFEA',
-		fontSize: 16,
+		fontSize: 17,
 		fontWeight: '500',
 		marginBottom: 12,
+		textAlign:"center",
+		marginHorizontal:24,
 	},
 	closeButton: {
 		width: '100%',
 		backgroundColor: '#69ABE6',
 		borderRadius: 12,
-		paddingVertical: 8,
+		paddingVertical: 10,
+		width:"90%",
+		marginBottom:4,
 	},
 	buttonText: {
 		color: 'white',

@@ -109,6 +109,8 @@ const SavingsLessons = ({ route }) => {
 					buttonText="Continue"
 					modalVisible={modalVisible}
 					onRequestClose={closeModal}
+					image={require("../../assets/confetti-gun.png")}
+					confetti
 				/>
 				<View
 					style={[
