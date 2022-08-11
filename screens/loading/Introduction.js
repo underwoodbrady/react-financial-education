@@ -8,9 +8,9 @@ import { useNavigation } from "@react-navigation/native";
 
 const MockPanelData=[
     {title:"Learn Active Investing Through Active Learning", image:require('../../assets/intro-graph.png')},
-    {title:"Feel More Confident in your Spending Habits", image:require('../../assets/intro-piggy.png')},
-    {title:"Look at This Graph; It Gives you Confidence", image:require('../../assets/intro-graph2.png')},
-    {title:"Rest Easy Knowing your Data is Safe and Secure", image:require('../../assets/intro-safe.png')},
+    {title:"Feel More Confident in Your Spending Habits", image:require('../../assets/intro-piggy.png')},
+    {title:"Financial Guidance for Every Stage of Life", image:require('../../assets/intro-graph2.png')},
+    {title:"Rest Easy Knowing Your Data is Safe and Secure", image:require('../../assets/intro-safe.png')},
 ];
 
 const Introduction = () => {

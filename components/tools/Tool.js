@@ -15,6 +15,12 @@ const Tool = ({ text, color, showImage, hideTool }) => {
         case "Retire Planning":
             imgSource = require("../../assets/bed.png");
             break;
+        case "Inflation Calculator":
+            imgSource = require("../../assets/bar-graph.png");
+            break;
+        case "Tip Calculator":
+            imgSource = require("../../assets/change.png");
+            break;
         default:
             imgSource = require("../../assets/calculator.png");
             break;

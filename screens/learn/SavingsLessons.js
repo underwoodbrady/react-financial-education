@@ -9,17 +9,31 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
 import LessonButton from '../../components/learn/LessonButton';
 
+import PopupCenterModal from '../../components/modal/PopupCenterModalNew';
+
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-const SavingsLessons = () => {
+const SavingsLessons = ({ route }) => {
 	const nav = useNavigation();
 	const [currLesson, setCurrLesson] = useState(0);
 	const [lessonsComplete, setLessonsComplete] = useState(0);
 	const [forwardActive, changeForwardActive] = useState(true);
 	const [backwardActive, changeBackwardActive] = useState(false);
+	const [modalVisible, setModalVisible] = useState(false);
 
 	const { lessonCompletion } = useSelector((state) => state.globalReducer);
+	/*
+	useEffect(() => {
+		if (route.params) {
+			const { showModal } = route.params;
+			if (showModal) {
+				setModalVisible(true);
+			}
+		}
+	}, [route]);
+*/
+	const closeModal = () => setModalVisible(false);
 
 	useEffect(() => {
 		let complete = 0;
@@ -87,6 +101,16 @@ const SavingsLessons = () => {
 	return (
 		<>
 			<View style={styles.container}>
+				{/**		
+				 * <PopupCenterModal
+					label="Congrats!"
+					subLabel="You've completed the lesson"
+					buttonText="Continue"
+					modalVisible={modalVisible}
+					onRequestClose={closeModal}
+				/> 
+				*/}
+
 				<View
 					style={[
 						styles.header,
