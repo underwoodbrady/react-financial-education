@@ -19,6 +19,7 @@ const PopupCenterModal = ({
 			<View style={styles.centeredView}>
 				<LottieView
 					autoPlay
+					loop={false}
 					style={{
 						width: 450,
 						height: 450,

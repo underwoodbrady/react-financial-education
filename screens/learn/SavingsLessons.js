@@ -23,16 +23,18 @@ const SavingsLessons = ({ route }) => {
 	const [modalVisible, setModalVisible] = useState(false);
 
 	const { lessonCompletion } = useSelector((state) => state.globalReducer);
-	/*
+
 	useEffect(() => {
 		if (route.params) {
 			const { showModal } = route.params;
 			if (showModal) {
 				setModalVisible(true);
+				console.log('show');
 			}
 		}
+		console.log('d');
 	}, [route]);
-*/
+
 	const closeModal = () => setModalVisible(false);
 
 	useEffect(() => {
@@ -101,16 +103,13 @@ const SavingsLessons = ({ route }) => {
 	return (
 		<>
 			<View style={styles.container}>
-				{/**		
-				 * <PopupCenterModal
+				<PopupCenterModal
 					label="Congrats!"
 					subLabel="You've completed the lesson"
 					buttonText="Continue"
 					modalVisible={modalVisible}
 					onRequestClose={closeModal}
-				/> 
-				*/}
-
+				/>
 				<View
 					style={[
 						styles.header,
