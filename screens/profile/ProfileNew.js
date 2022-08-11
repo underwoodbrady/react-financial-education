@@ -8,6 +8,7 @@ import { Entypo, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import SlideUpModal from "../../components/modal/SlideUpModal";
+import AdvisorTab from "../../components/profile/AdvisorTab";
 
 const ProfileNew = ({ route }) => {
     const nav = useNavigation();
@@ -75,6 +76,16 @@ const ProfileNew = ({ route }) => {
                     <View style={styles.preferencesBox}>
                         <LearningPreferences
                             onPressButton={() => nav.navigate("Preferences")}
+                        />
+                    </View>
+                </View>
+
+                <View style={styles.preferencesContainer}>
+                    <Text style={styles.sectionTitle}>Advisor Connect</Text>
+                    
+                    <View style={styles.preferencesBox}>
+                        <AdvisorTab
+                            onPressButton={() => nav.navigate("Advisor Connect")}
                         />
                     </View>
                 </View>
